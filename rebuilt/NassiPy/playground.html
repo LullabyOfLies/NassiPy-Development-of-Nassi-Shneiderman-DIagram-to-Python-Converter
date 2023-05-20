@@ -101,7 +101,7 @@
     <div class="row">
        <div class="column">
               <div id="sidebar">
-                     <div class="dblock process" draggable="true" ondragstart="drag(event)">
+                     <div class="dblock process"  draggable="true" ondragstart="drag(event)">
                        <!-- <div class="droparea drop-before-begin" ondrop="drop(event)" ondragover="allowDrop(event)"
                          ondragenter="dragEnter(event)" ondragleave="dragLeave(event)">
                        </div> -->
@@ -112,7 +112,7 @@
                  
                      <!-- <h2>Decision</h2> -->
                  
-                     <div class="dblock decision decision-two" draggable="true" ondragstart="drag(event)">
+                     <div class="dblock decision decision-two" id="ifelstatement" draggable="true" ondragstart="drag(event)">
                        <div class="droparea drop-before-begin" ondrop="drop(event)" ondragover="allowDrop(event)"
                          ondragenter="dragEnter(event)" ondragleave="dragLeave(event)">
                        </div>
@@ -150,61 +150,9 @@
                      </div>
                  
                  
-                     <!-- <h2>CASE Statement</h2> -->
-                 
-                     <div class="dblock decision" draggable="true" ondragstart="drag(event)" ondrop="decisionDrop(event);">
-                       <div class="droparea drop-before-begin" ondrop="drop(event)" ondragover="allowDrop(event)"
-                         ondragenter="dragEnter(event)" ondragleave="dragLeave(event)">
-                       </div>
-                       <textarea rows="1" placeholder="Condition" ondrop="return false;" oninput="textareaResize(event);"
-                         ondragstart="return false;" onfocusin="disableDraggableParent(event);"
-                         onfocusout="enableDraggableParent(event);"></textarea>
-                       <div class="triangles">
-                         <svg>
-                           <line x1="-5%" y1="0" x2="105%" y2="100%" style="stroke:rgb(127,127,127);stroke-width:5" />
-                         </svg>
-                         <svg>
-                           <line x1="-5%" y1="100%" x2="105%" y2="0" style="stroke:rgb(127,127,127);stroke-width:5" />
-                         </svg>
-                       </div>
-                       <div class="decision-branches">
-                         <div class="decision-branch">
-                           <textarea rows="1" placeholder="True" ondrop="return false;" oninput="textareaResize(event);"
-                             ondragstart="return false;" onfocusin="disableDraggableParent(event);"
-                             onfocusout="enableDraggableParent(event);"></textarea>
-                 
-                           <div class="droparea drop-before-end" ondrop="drop(event)" ondragover="allowDrop(event)"
-                             ondragenter="dragEnter(event)" ondragleave="dragLeave(event)">
-                           </div>
-                         </div>
-                         <div class="decision-branch">
-                           <textarea rows="1" placeholder="False" ondrop="return false;" oninput="textareaResize(event);"
-                             ondragstart="return false;" onfocusin="disableDraggableParent(event);"
-                             onfocusout="enableDraggableParent(event);"></textarea>
-                           <div class="droparea drop-before-end" ondrop="drop(event)" ondragover="allowDrop(event)"
-                             ondragenter="dragEnter(event)" ondragleave="dragLeave(event)">
-                           </div>
-                         </div>
-                         <div class="decision-branch">
-                           <textarea rows="1" placeholder="Default" ondrop="return false;" oninput="textareaResize(event);"
-                             ondragstart="return false;" onfocusin="disableDraggableParent(event);"
-                             onfocusout="enableDraggableParent(event);"></textarea>
-                           <div class="droparea drop-before-end" ondrop="drop(event)" ondragover="allowDrop(event)"
-                             ondragenter="dragEnter(event)" ondragleave="dragLeave(event)">
-                           </div>
-                         </div>
-                       </div>
-                     </div>
-                 
-                     <div class="dblock decision-item" draggable="true" ondragstart="drag(event)">
-                       <textarea rows="1" placeholder="Branch" ondrop="return false;" oninput="textareaResize(event);"
-                         ondragstart="return false;" onfocusin="disableDraggableParent(event);"
-                         onfocusout="enableDraggableParent(event);"></textarea>
-                     </div>
-                 
                      <!-- <h2>Iteration</h2> -->
                  
-                     <div class="dblock iteration" draggable="true" ondragstart="drag(event)">
+                     <div class="dblock iteration" id="iterate" draggable="true" ondragstart="drag(event)">
                        <div class="droparea drop-before-begin" ondrop="drop(event)" ondragover="allowDrop(event)"
                          ondragenter="dragEnter(event)" ondragleave="dragLeave(event)">
                        </div>
@@ -216,86 +164,9 @@
                        </div>
                      </div>
                  
-                     <!-- <h2>Repeat-While</h2> -->
-                     <div class="dblock repeatwhile" draggable="true" ondragstart="drag(event)">
-                       <div class="droparea drop-before-begin" ondrop="drop(event)" ondragover="allowDrop(event)"
-                         ondragenter="dragEnter(event)" ondragleave="dragLeave(event)">
-                       </div>
-                       <div class="droparea drop-before-end drop-repeatwhile" ondrop="drop(event)" ondragover="allowDrop(event)"
-                         ondragenter="dragEnter(event)" ondragleave="dragLeave(event)">
-                       </div>
-                       <textarea class="left-ta" rows="1" placeholder="Condition" ondrop="return false;" oninput="textareaResize(event);"
-                         ondragstart="return false;" onfocusin="disableDraggableParent(event);"
-                         onfocusout="enableDraggableParent(event);"></textarea>
-                     </div>
+                    
                  
-                 
-                 
-                     <!-- <h2>Begin-End</h2> -->
-                     <div class="dblock begin-end" draggable="true" ondragstart="drag(event)">
-                       <div class="droparea drop-before-begin" ondrop="drop(event)" ondragover="allowDrop(event)"
-                         ondragenter="dragEnter(event)" ondragleave="dragLeave(event)">
-                       </div>
-                       <textarea class="left-ta" rows="1" placeholder="Condition" ondrop="return false;" oninput="textareaResize(event);"
-                         ondragstart="return false;" onfocusin="disableDraggableParent(event);"
-                         onfocusout="enableDraggableParent(event);"></textarea>
-                       <div class="droparea drop-before-end drop-begin-end" ondrop="drop(event)" ondragover="allowDrop(event)"
-                         ondragenter="dragEnter(event)" ondragleave="dragLeave(event)">
-                       </div>
-                       <textarea class="left-ta" rows="1" placeholder="Condition" ondrop="return false;" oninput="textareaResize(event);"
-                         ondragstart="return false;" onfocusin="disableDraggableParent(event);"
-                         onfocusout="enableDraggableParent(event);"></textarea>
-                     </div>
-                 
-                 
-                 
-                     <!-- <h2>Parallel Processing</h2> -->
-                 
-                     <div class="dblock decision parallel" draggable="true" ondragstart="drag(event)" ondrop="parallelDrop(event);">
-                       <div class="droparea drop-before-begin" ondrop="drop(event)" ondragover="allowDrop(event)"
-                         ondragenter="dragEnter(event)" ondragleave="dragLeave(event)">
-                       </div>
-                       <div class="parallel-top">
-                         <svg>
-                           <line x1="0" y1="103%" x2="20%" y2="-3%" style="stroke:rgb(127,127,127);stroke-width:5" />
-                         </svg>
-                         <svg>
-                           <line x1="80%" y1="-3%" x2="100%" y2="103%" style="stroke:rgb(127,127,127);stroke-width:5" />
-                         </svg>
-                       </div>
-                       <div class="decision-branches">
-                         <div class="decision-branch">
-                           <div class="droparea drop-before-end par-da" ondrop="drop(event)" ondragover="allowDrop(event)"
-                             ondragenter="dragEnter(event)" ondragleave="dragLeave(event)">
-                           </div>
-                         </div>
-                         <div class="decision-branch">
-                           <div class="droparea drop-before-end par-da" ondrop="drop(event)" ondragover="allowDrop(event)"
-                             ondragenter="dragEnter(event)" ondragleave="dragLeave(event)">
-                           </div>
-                         </div>
-                         <div class="decision-branch">
-                           <div class="droparea drop-before-end par-da" ondrop="drop(event)" ondragover="allowDrop(event)"
-                             ondragenter="dragEnter(event)" ondragleave="dragLeave(event)">
-                           </div>
-                         </div>
-                       </div>
-                       <div class="parallel-bottom">
-                         <svg>
-                           <line x1="0" y1="-3%" x2="20%" y2="103%" style="stroke:rgb(127,127,127);stroke-width:5" />
-                         </svg>
-                         <svg>
-                           <line x1="80%" y1="103%" x2="100%" y2="-3%" style="stroke:rgb(127,127,127);stroke-width:5" />
-                         </svg>
-                       </div>
-                     </div>
-                 
-                 
-                     <div class="dblock parallel-item" draggable="true" ondragstart="drag(event)">
-                       <textarea rows="1" placeholder="Parallel Block" ondrop="return false;" oninput="textareaResize(event);"
-                         ondragstart="return false;" onfocusin="disableDraggableParent(event);"
-                         onfocusout="enableDraggableParent(event);"></textarea>
-                     </div>
+                     
                    </div>
           </div>
        

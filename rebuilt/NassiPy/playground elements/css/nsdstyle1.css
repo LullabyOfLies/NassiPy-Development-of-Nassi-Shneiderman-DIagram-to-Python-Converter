@@ -83,6 +83,7 @@
       margin-bottom: 50px; */
     
      }
+     #rblock .dblock.process{}
      /* sidebarbtn */
      /* #openbtn {
       font-size: 20px;
@@ -272,6 +273,7 @@
        box-sizing: border-box;
        border-color: #7f7f7f;
        display: block;
+       
      }
      
      #canvas {
@@ -288,6 +290,8 @@
        /* overflow-y: scroll;  */
        
      }
+     
+ 
      
      .droparea {
        margin-top: 1rem;
@@ -321,6 +325,8 @@
        display: block;
        width: fit-content;
        padding: 2rem;
+     
+      
      }
      
      textarea[placeholder="True"],
@@ -352,7 +358,9 @@
      }
      
      /* INSTRUCTION */
-     .dblock.process {}
+     .dblock.process {
+     
+     }
      
      /* DECISION */
      .decision {
@@ -423,6 +431,7 @@
      
      .decision .droparea.drop-before-begin {
        margin: -5px !important;
+       
      }
      
      .decision .decision-branches .decision-branch .droparea {

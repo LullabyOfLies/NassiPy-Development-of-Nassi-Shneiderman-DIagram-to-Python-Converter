@@ -1,27 +1,4 @@
 
-/**
- *
- * @licstart  The following is the entire license notice for the 
- *  JavaScript code in this page.
- *
- * Copyright (C) 2023 Yannis Charalambidis
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU Affero General Public License as
- * published by the Free Software Foundation, either version 3 of the
- * License, or (at your option) any later version.
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU Affero General Public License for more details.
- * You should have received a copy of the GNU Affero General Public License
- * along with this program.  If not, see <https://www.gnu.org/licenses/>.
- *
- *
- * @licend  The above is the entire license notice
- * for the JavaScript code in this page.
- *
- */
 
 console.clear();
 
@@ -249,7 +226,7 @@ function setDropBeforeEndTransparent(dr) {
   }
 } */
 
-
+//sa hover ng droparea to 
 function setDBE(dr) {
   if (dr == null) {
     return false;
@@ -265,11 +242,9 @@ function setDBE(dr) {
     return false;
   }
 
-  dbe.style.backgroundColor = "red";
+  dbe.style.backgroundColor = "skyblue";
   dbe.style.borderColor = "red";
   dbe.style.paddingBottom = "2rem";
-
-
 }
 
 function unsetDBE(dr) {
@@ -302,169 +277,12 @@ function dragEnter(ev) {
 
 }
 
+
+
 // main function starts here
+
+//initial parser
 function processInput() {
-  // console.log('processInput() called');
-
-  // const textareas = document.querySelectorAll('#canvas textarea:not([placeholder="True"]):not([placeholder="False"])');
-  // // console.log(textareas);
-
-  // let hasMatch = true;
-  // const textareaValues = [];
-
-  // // Put each textarea value in a variable and check for matches
-  // textareas.forEach(textarea => {
-  //   const input = textarea.value;
-  //   textareaValues.push(input);
-
-  //   // Create a regular expression object using the RegExp constructor
-  //   const keywords = "and|as|assert|break|class|continue|def|del|elif|else|except|false|finally|for|from|global|if|import|in|is|lambda|none|nonlocal|not|or|print|raise|return|true|try|while|with|yield";
-  //   const operators = [
-  //     "\\+", "\\-", "\\*", "\\/", "\\/\\/", "\\%", "\\*\\*", "\\=\\=", "\\!\\=", "\\>", "\\<", "\\>\\=",
-  //     "\\<\\=", "\\+\\=", "\\-\\=", "\\*\\=", "\\/\\=", "\\/\\/\\=", "\\%\\=", "\\*\\*\\=", "\\=", "is", "\\&\\&",
-  //     "\\|\\|", "\\&\\=", "\\|\\=", "\\^\\=", "\\<\\<\\=", "\\>\\>\\=", "\\(\\)", "\\{\\}", "\\:", "\\,", "\\."
-  //   ];
-  //   const regex = new RegExp(`\\b(${keywords})\\b`, "g"); // "g" flag for global match
-  //   const regex1 = new RegExp(`(?:${operators.join('|')})`, 'g');
-  //   const matches = input.match(regex);
-  //   const matches1 = input.match(regex1);
-
-  //   // If there is no match, set hasMatch to false
-  //   if (matches === null && matches1 === null) {
-  //     console.log(`error input: "${input}"`);
-  //     hasMatch = false;
-  //   }
-  // });
-
-  // // Call setParentAndChildren() if all textareas have a match
-  // if (hasMatch) {
-  //   // console.log('calling setParentAndChildren()');
-  //   setParentAndChildren();
-  // }
-
-  // FINAL processInput() with error handling
-//   const dropareas = document.querySelectorAll('#canvas .droparea');
-
-// let trueEmpty = false;
-// let falseEmpty = false;
-
-// dropareas.forEach(droparea => {
-//   if (droparea.id === 'true1' && droparea.children.length === 0) {
-//     trueEmpty = true;
-//   }
-//   if (droparea.id === 'false1' && droparea.children.length === 0) {
-//     falseEmpty = true;
-//   }
-// });
-
-// if (trueEmpty && falseEmpty) {
-//   console.log('both empty');
-// } else if (trueEmpty && !falseEmpty) {
-//   console.log('true is empty');
-// } else {
-//   const textareas = document.querySelectorAll('#canvas textarea:not([placeholder="True"])');
-//   let hasMatch = true;
-//   const textareaValues = [];
-
-//   textareas.forEach(textarea => {
-//     const input = textarea.value;
-//     textareaValues.push(input);
-
-//     const keywords = "and|as|assert|break|class|continue|def|del|elif|else|except|false|finally|for|from|global|if|import|in|is|lambda|none|nonlocal|not|or|print|raise|return|true|try|while|with|yield";
-//     const operators = [
-//       "\\+", "\\-", "\\*", "\\/", "\\/\\/", "\\%", "\\*\\*", "\\=\\=", "\\!\\=", "\\>", "\\<", "\\>\\=",
-//       "\\<\\=", "\\+\\=", "\\-\\=", "\\*\\=", "\\/\\=", "\\/\\/\\=", "\\%\\=", "\\*\\*\\=", "\\=", "is", "\\&\\&",
-//       "\\|\\|", "\\&\\=", "\\|\\=", "\\^\\=", "\\<\\<\\=", "\\>\\>\\=", "\\(\\)", "\\{\\}", "\\:", "\\,", "\\."
-//     ];
-//     const regex = new RegExp(`\\b(${keywords})\\b`, "g");
-//     const regex1 = new RegExp(`(?:${operators.join('|')})`, 'g');
-//     const matches = input.match(regex);
-//     const matches1 = input.match(regex1);
-
-//     if (matches === null && matches1 === null) {
-//       console.log(`error input: "${input}"`);
-//       hasMatch = false;
-//     }
-//   });
-
-//   // Set value of textareas with placeholder "False" to "else"
-//   const falseTextareas = document.querySelectorAll('#canvas textarea[placeholder="False"]');
-//   falseTextareas.forEach(falseTextarea => {
-//     falseTextarea.value = "else";
-//   });
-
-//   if (hasMatch) {
-//     setParentAndChildren();
-//   }
-// }
-
-// latest 
-// const textareas = document.querySelectorAll('#canvas textarea:not([placeholder="True"])');
-// let allTextareasFilled = true;
-
-// textareas.forEach(textarea => {
-//   if (textarea.value.trim() === '') {
-//     allTextareasFilled = false;
-//     console.log('there\'s an empty textarea');
-//     return;
-//   }
-// });
-
-// if (!allTextareasFilled) {
-//   return;
-// }
-
-// const dropareas = document.querySelectorAll('#canvas .droparea');
-// let trueEmpty = false;
-// let falseEmpty = false;
-
-// dropareas.forEach(droparea => {
-//   if (droparea.id === 'true1' && droparea.children.length === 0) {
-//     trueEmpty = true;
-//   }
-//   if (droparea.id === 'false1' && droparea.children.length === 0) {
-//     falseEmpty = true;
-//   }
-// });
-
-// if (trueEmpty && falseEmpty) {
-//   console.log('both empty');
-// } else if (trueEmpty && !falseEmpty) {
-//   console.log('true is empty');
-// } else {
-//   let hasMatch = false;
-//   const textareaValues = [];
-
-//   textareas.forEach(textarea => {
-//     const input = textarea.value;
-//     textareaValues.push(input);
-
-//     const keywords = "and|as|assert|break|class|continue|def|del|elif|else|except|false|finally|for|from|global|if|import|in|is|lambda|none|nonlocal|not|or|print|raise|return|true|try|while|with|yield";
-//     const operators = [
-//       "\\+", "\\-", "\\*", "\\/", "\\/\\/", "\\%", "\\*\\*", "\\=\\=", "\\!\\=", "\\>", "\\<", "\\>\\=",
-//       "\\<\\=", "\\+\\=", "\\-\\=", "\\*\\=", "\\/\\=", "\\/\\/\\=", "\\%\\=", "\\*\\*\\=", "\\=", "is", "\\&\\&",
-//       "\\|\\|", "\\&\\=", "\\|\\=", "\\^\\=", "\\<\\<\\=", "\\>\\>\\=", "\\(\\)", "\\{\\}", "\\:", "\\,", "\\."
-//     ];
-//     const regex = new RegExp(`\\b(${keywords})\\b`, "g");
-//     const regex1 = new RegExp(`(?:${operators.join('|')})`, 'g');
-//     const matches = input.match(regex);
-//     const matches1 = input.match(regex1);
-
-//     if ((matches !== null && matches.length > 0) || (matches1 !== null && matches1.length > 0)) {
-//       hasMatch = true;
-//     } else {
-//       console.log(`error input: "${input}"`);
-//       hasMatch = false;
-//     }
-//   });
-
-//   if (hasMatch) {
-//     setParentAndChildren();
-//   } else {
-//     console.log(`error input: "${textareaValues}"`);
-//   }
-// }
-
 
 //CURRENT AND WORKING WELL UPDATED
 const textareas = [...document.querySelectorAll('#canvas textarea:not([placeholder="True"])')];
@@ -536,180 +354,36 @@ textareas.forEach((textarea) => {
 
 }
 
+
+//diagram blocks color manipulation
+//this below is for process
+(function() {
+  const processTextareas = document.querySelectorAll("textarea[placeholder='Process']");
+  processTextareas.forEach(textarea => {
+    textarea.style.backgroundColor = "#ebfed0  ";
+  });
+})();
+
+//this below is for if else statement diagram
+(function() {
+  const ifelStatements = document.querySelectorAll("#ifelstatement");
+  ifelStatements.forEach(ifelStatement => {
+    ifelStatement.style.backgroundColor = "#F5D545";
+  });
+})();
+
+//this below is for iteration diagram
+(function() {
+  const ifelStatements = document.querySelectorAll("#iterate");
+  ifelStatements.forEach(ifelStatement => {
+    ifelStatement.style.backgroundColor = "#3cbee1";
+  });
+})();
+
+
+//semantic analyzer
 function setParentAndChildren() {
- 
-// // may 14 attempt #2 FINAL FIXED ELIF
-// const textareas = Array.from(document.querySelectorAll("#canvas textarea:not([placeholder='True'])"));
 
-// // create a linked list from the textareas
-// let linkedList = null;
-// let linkedListTail = null;
-// for (const textarea of textareas) {
-//   const node = { value: textarea.value, level: null, next: null };
-//   if (!linkedList) {
-//     linkedList = node;
-//     linkedListTail = node;
-//   } else {
-//     linkedListTail.next = node;
-//     linkedListTail = node;
-//   }
-// }
-
-
-
-// // initialize indention and current node variables
-// let indention = " ";
-// let previousNode = null;
-// let currentNode = linkedList;
-// let nextNode = currentNode.next;
-
-// // initialize ifCountArr
-// const ifCountArr = [];
-// const ifCountArr1 = [];
-// const elseCountArr = [];
-// const elifCountArr = [];
-// // set level of first node to 0
-// currentNode.level = 0;
-// // console.log(currentNode);
-
-
-
-// // traverse the linked list
-// while (currentNode) {
-//   // check if the current node is an if statement
-//   if (currentNode.value.trim().startsWith("if")) {
-//     if (previousNode && (previousNode.value.trim().startsWith("if") || previousNode.value.trim().startsWith("def")) || previousNode.value.trim().startsWith("for") ) {
-//       currentNode.level = previousNode.level + 1;
-//     } else {
-//       currentNode.level = 1;
-//     }
-//     ifCountArr.push({ level: currentNode.level, node: currentNode });
-//     ifCountArr1.push({ level: currentNode.level, node: currentNode });
-//     }else if (previousNode && currentNode.value.trim().startsWith("else") && nextNode.value.trim().startsWith("if")) {
-//       let tempNode=previousNode.level;
-//       currentNode.level = tempNode;
-//       currentNode.next = nextNode.next;
-//       if (nextNode.value.trim().startsWith("if")) {
-//         nextNode.value = "elif" + nextNode.value.substring(2);
-//       }
-//       nextNode.level = currentNode.level;
-//       currentNode.value = nextNode.value;
-//       currentNode.level = nextNode.level;
-//       currentNode.next = nextNode.next;
-//       nextNode = currentNode.next;
-//       elifCountArr.push({ level: currentNode.level, node: currentNode });
-
-      
-//       if (previousNode && currentNode.value.trim().startsWith("elif")) {
-     
-
-//         const highestLevel = Math.max(...ifCountArr1.map(node => node.level));
-
-//         ifCountArr1.splice(ifCountArr1.findIndex(node => node.level === highestLevel), 1);
-        
-        
-       
-       
-//           if (elifCountArr.length < ifCountArr1.length) {
-//             // console.log(elifCountArr);
-            
-//             if(ifCountArr.length > 1){
-//             currentNode.level = highestLevel;
-//             // console.log(currentNode);
-//             // console.log(elifCountArr);
-//             }else{
-//               currentNode.level = 1;
-           
-//             }
-//           }
-//            else {
-//             currentNode.level = 1;
-        
-//           }
-//         }
-//           // console.log(ifCountArr1);
-//           // console.log(elifCountArr);
-        
-      
-            
-      
-      
-      
-//      //may problema pa dito
-//       // if (previousNode && currentNode.value.trim().startsWith("elif") && !nextNode.value.trim().startsWith("if")) {
-//       //   if (elifCountArr.length > 0) {
-//       //       let highestElifLevel = Math.max(...elifCountArr.map(obj => obj.level));
-//       //       let currentNodeLevel;
-//       //       if (elifCountArr.some(obj => obj.node === currentNode && obj.level === highestElifLevel)) {
-//       //           currentNodeLevel = Math.max(...ifCountArr1.map(obj => obj.level));
-//       //       } else {  
-//       //           currentNodeLevel = Math.min(...ifCountArr1.map(obj => obj.level));
-//       //       }
-//       //       currentNode.level = currentNodeLevel;
-//       //   }
-
-//     // console.log(previousNode);
-//     // console.log(currentNode);
-   
-//   }    
-//   else if (currentNode.value.trim().startsWith("else") && !nextNode.value.trim().startsWith("if") && !nextNode.value.trim().startsWith("elif")) {
-//     let mostRecentElseLevel = -1;
-//     let prevNode = previousNode;
-    
-//     // console.log(elseCountArr);
-//     // Traverse linked list backwards to find the most recent else node
-//     while (prevNode) {
-//       if (prevNode.value.trim().startsWith("if")) {
-//         break;
-//       } else if (prevNode.value.trim().startsWith("else")) {
-//         mostRecentElseLevel = prevNode.level;
-//       }
-//       prevNode = prevNode.previous;
-//     }
-  
-//     if (ifCountArr.length === 0 && highestLevel === -1) {
-//       // Set the level of the currentNode to the level of the most recent else node
-//       currentNode.level = mostRecentElseLevel;
-//     }else {
-//       // find the highest level node in ifCountArr and set it as the level of the current node
-//       let highestNode = null;
-//       let highestLevel = -1;
-//       for (let i = 0; i < ifCountArr.length; i++) {
-//         const { level, node } = ifCountArr[i];
-//         if (level > highestLevel) {
-//           highestLevel = level;
-//           highestNode = node;
-//         }
-//       }
-     
-//       currentNode.level = highestLevel;
-//       // remove the highest level node from ifCountArr
-//       ifCountArr.splice(ifCountArr.indexOf(highestNode), 1);
-  
-//     }
-//     elseCountArr.push({ level: currentNode.level, node: currentNode }); // Add elif node to elifCountArr
-
-   
-//   }
-//   // check if the current node is not an if/else/elif/def statement
-//   else if (!currentNode.value.trim().startsWith("elif") && !currentNode.value.trim().startsWith("def") && !currentNode.value.trim().startsWith("if") && !currentNode.value.trim().startsWith("else")) {
-//     currentNode.level = previousNode.level + 1; 
-
-//   }
-//   // output node with level
-//   const count = Math.max(0, currentNode.level);
-//   console.log(`${indention.repeat(count)}${currentNode.value}`);
-
-//   // update variables for next iteration
-//   previousNode = currentNode;
-//   currentNode = nextNode;
-//   if (nextNode) {
-//     nextNode = nextNode.next;
-//   }
-// }
-// may 14 attempt #2 end
-
-//may 15 attempt #1 to fix the other statements indention 
 // may 14 attempt #2 FINAL FIXED ELIF
 const textareas = Array.from(document.querySelectorAll("#canvas textarea:not([placeholder='True'])"));
 
@@ -1018,7 +692,7 @@ function allowDrop(ev) {
 }
 
 function drag(ev) {
-  ev.target.style.backgroundColor = "white";
+  // ev.target.style.backgroundColor = "white";
   ev.dataTransfer.setData("text", ev.target.outerHTML);
 }
 
@@ -1349,7 +1023,7 @@ function setDecisionTriangle(newNode) {
 function unselectAllElementsFromDroparea(element) {
   selectedElement = null;
   for (let i = 0; i < element.children.length; ++i) {
-    element.children[i].style.backgroundColor = "white";
+    // element.children[i].style.backgroundColor = "transparent";
   }
 }
 
