@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Tab Display -->
+    <link rel="icon" type="image/png" href="../images/icon.png">
+    <title>About Us</title>
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/dfcb8f4a1a.js" crossorigin="anonymous"></script>
+ 
+    <!-- Bootstrap 5.3.0 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/about-us.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    
+</head>
+<body>
+    <header id="#">
+        <nassipy-navbar></nassipy-navbar>
+    </header>
+
+    <main id="aboutUs">
+        <section id="aboutUsDescription">
+            <div class="container-fluid banner-section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h1 about-title>About Us</h1>
+                            <div class="col">
+                                <p>
+                                    <!-- TODO: change message -->
+                                    Welcome to NassiPy, your helper in understanding the logic flow and thought process in solving problems systematically.
+                                </p>
+                                <p>
+                                    We hope you enjoy our services as much as we enjoy offering them to you. If you have any questions or comments, please don't hesitate to contact us.
+                                </p>
+                                <p>Sincerely,<br/>NassiPy</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <!-- TODO: Change better logo? -->
+                            <div class="card"><img class="card-img-top img-fluid" src="../images/logoorig.png" alt="NassiPy"></div> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="team">
+            <div class="container-fluid team-container">
+                    <h1 class="about-title">Meet the Team</h1>
+                    <!-- TODO: store member images in image/member folder -->
+                    <div class="row mx-auto my-5">
+                        <!-- Member 1 -->
+                        <div class="col media col-sm-12 col-md-6 col-round">
+                            <div class="round-image-container">
+                                <img src="../images/member1.jpg" class="round-image" alt="Member 1" />
+                            </div>
+                            <p>Lester Joseph Gloria</p>
+                            <p>lesterjosephgloria1@gmail.com</p>
+                        </div>
+                        <!-- Member 2 -->
+                        <div class="col media col-sm-12 col-md-6 col-round">
+                            <div class="round-image-container">
+                                <img src="../images/member2.JPG" class="round-image" alt="Member 2" />
+                            </div>
+                            <p>Cristian Bien Armedilla</p>
+                            <p>cristianarmedilla@gmail.com</p>
+                        </div>
+                        <!-- Member 3 -->
+                        <div class="col media col-sm-12 col-md-6 col-round">
+                            <div class="round-image-container">
+                                <img src="../images/member3.jpg" class="round-image" alt="Member 3" />
+                            </div>
+                            <p>Jean Lorenz Recato</p>
+                            <p>jeanrecato25@gmail.com</p>
+                        </div>
+                     
+                    </div>
+            </div>
+        </section>
+    </main>
+
+    <nassipy-footer></nassipy-footer>
+
+    <!-- JavaScript -->
+    <script src="../components/navbar.js"></script>
+    <script src="../components/footer.js"></script>
+</body>
+</html>
