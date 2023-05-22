@@ -1,0 +1,40 @@
+/* About Us */
+#team .team-container {
+    height: 100%;
+    width: auto;
+    font-family: 'Lato';
+    font-weight: 400;
+    display: grid;
+    place-items: center;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 20px;
+}
+
+.about-title {
+    font-family: "Lato";
+    font-weight: 300;
+    font-size: clamp(1.875rem, 0.4688rem + 4.5vw, 3rem);
+    color: #fff;
+    max-width: 500px;
+    margin-top: 70px;
+}
+#team h1{
+    text-align: center;
+}
+
+#team .col-round {
+    text-align: center;
+    padding: 20px;
+}
+
+#team .round-image {
+    border-radius: 50%;
+    width: 30vh;
+    height: 30vh;
+    object-fit: cover;
+    text-align: center;
+    background-color: #fff;
+    margin-bottom: 30px;
+}

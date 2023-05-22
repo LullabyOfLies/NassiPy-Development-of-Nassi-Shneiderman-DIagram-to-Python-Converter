@@ -1,0 +1,52 @@
+/* Nassi Shneiderman */
+#nassi-section {
+    min-height: 100vh;
+    width: 100%;
+    background-color: #44447e;
+    display: grid;
+    align-items: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+#nassi-section h1 {
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+/* Python */
+#python-section {
+    min-height: 100vh;
+    width: 100%;
+    background-color: #0fb9e8;
+    display: grid;
+    align-items: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+#python-section h1 {
+    color: #1b1b32;
+    margin-bottom: 20px;
+}
+#python-section p {
+    color: #1b1b32;
+}
+
+#nassi-section iframe,
+#python-section iframe {
+    position: relative;
+    aspect-ratio: auto 16/9;
+    width: 100%;
+}
+
+#playground-section {
+    min-height: 100vh;
+    width: 100%;
+    display: grid;
+    align-items: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+#playground-section h1 {
+    color: #fff;
+    margin-bottom: 20px;
+}
