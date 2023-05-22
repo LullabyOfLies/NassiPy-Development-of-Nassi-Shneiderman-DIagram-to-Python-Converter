@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="/rebuilt/NassiPy/playground elements/css/nsdstyle1.css">
        <script src='/rebuilt/NassiPy/playground elements/js/panzoom.min.js'></script>
        <script src='/rebuilt/NassiPy/playground elements/js/html2canvas.min.js'></script>
+
     <!-- Webpage tab icon -->
     <link rel="shortcut icon" type="image/x-icon" href="/rebuilt/NassiPy/images/icon.png" />
 
@@ -87,7 +88,7 @@
       <div class="menu">
              <button onclick="upload();">Open</button>
              <button onclick="save();">Save</button>
-             <button onclick="printContent();">Print</b></button>
+             <!-- <button onclick="printContent();">Print</b></button> -->
              <button onclick="removeElement();">Delete</button>
              <!-- <button onclick="centerCanvas();">Center canvas <b>[^A]</b></button> -->
              <button onclick="undo();">Undo</button>
@@ -116,15 +117,15 @@
                        <div class="droparea drop-before-begin" ondrop="drop(event)" ondragover="allowDrop(event)"
                          ondragenter="dragEnter(event)" ondragleave="dragLeave(event)">
                        </div>
-                       <textarea rows="1" placeholder="Condition" ondrop="return false;" oninput="textareaResize(event);"
+                       <textarea rows="1" placeholder="ifCondition" ondrop="return false;" oninput="textareaResize(event);"
                          ondragstart="return false;" onfocusin="disableDraggableParent(event);"
                          onfocusout="enableDraggableParent(event);"></textarea>
                        <div class="triangles">
                          <svg>
-                           <line x1="-5%" y1="0" x2="105%" y2="100%" style="stroke:rgb(127,127,127);stroke-width:5" />
+                           <line x1="-5%" y1="0" x2="105%" y2="100%" style="stroke:rgb(127,127,127);stroke-width:3" />
                          </svg>
                          <svg>
-                           <line x1="-5%" y1="100%" x2="105%" y2="0" style="stroke:rgb(127,127,127);stroke-width:5" />
+                           <line x1="-5%" y1="100%" x2="105%" y2="0" style="stroke:rgb(127,127,127);stroke-width:3" />
                          </svg>
                        </div>
                        <div class="decision-branches">
@@ -156,10 +157,10 @@
                        <div class="droparea drop-before-begin" ondrop="drop(event)" ondragover="allowDrop(event)"
                          ondragenter="dragEnter(event)" ondragleave="dragLeave(event)">
                        </div>
-                       <textarea class="left-ta rewh-ta" rows="1" placeholder="Condition" ondrop="return false;"
+                       <textarea class="left-ta rewh-ta" rows="1" placeholder="forCondition" ondrop="return false;"
                          oninput="textareaResize(event);" ondragstart="return false;" onfocusin="disableDraggableParent(event);"
                          onfocusout="enableDraggableParent(event);"></textarea>
-                       <div class="droparea drop-before-end drop-iteration" ondrop="drop(event)" ondragover="allowDrop(event)"
+                       <div class="droparea drop-before-end drop-iteration" id="forloop" ondrop="drop(event)" ondragover="allowDrop(event)"
                          ondragenter="dragEnter(event)" ondragleave="dragLeave(event)">
                        </div>
                      </div>
@@ -171,6 +172,7 @@
           </div>
        
        <div class="column1">
+        <p class="zoom">Alt + scroll Up and down for zoom-in or out</p>
               <div id="canvas">
                      <div id="rblock" class="dblock program">
                        <textarea rows="1" placeholder="Program" ondrop="return false;" oninput="textareaResize(event);"></textarea>
@@ -181,10 +183,21 @@
                  
               </div>
        </div>
-       
-    </div>
-  
 
+       <div class="column2">
+            <textarea class="codetbconvert" rows="30"></textarea>
+            <!-- <textarea class="callIt" rows="1"></textarea> -->
+       </div>
+
+       <div class="column3">
+        <p class="codeoutput" rows="30">
+          <iframe src="https://trinket.io/embed/python/3d8d7ce66b" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+        </p>
+        
+   </div>
+    </div>
+    
+   
     <!-- loader script -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
@@ -200,6 +213,7 @@
     });
     </script>
     <!-- loader end -->
+    
 
     <!-- openNav() -->
     <!-- <script>
@@ -215,11 +229,16 @@
       document.getElementById("nsdmaker").style.marginLeft= "0";
     }
     </script> -->
+    <!-- try to non npm -->
+   
 
    <!-- main.js nsdmaker start -->
    <script src="/rebuilt/NassiPy/playground elements/js/main.js"></script>
     <!-- main.js nsdmaker end -->
 
+    <!-- output.js start -->
+ <!-- <script src="/rebuilt/NassiPy/playground elements/js/output.js"></script> -->
+     <!-- output.js end -->
     <!-- jQuery -->
     <script src="/rebuilt/NassiPy/playground elements/js/jquery-2.1.0.min.js"></script>
     <!-- Bootstrap -->

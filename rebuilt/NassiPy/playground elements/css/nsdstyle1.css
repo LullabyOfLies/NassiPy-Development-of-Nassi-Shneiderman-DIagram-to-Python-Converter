@@ -104,23 +104,81 @@
     } */
     .column {
        float: left;
-       width: 25%;
+       width: 23.33%;
        padding: 10px;
-       height: 100%; /* Should be removed. Only for demonstration */
+       height: 70%; /* Should be removed. Only for demonstration */
        /* border: 1px solid black; */
        border-right: ridge;
      }
      .column1 {
        float:none;
        position: relative;
-       width: 75%;
+       width: 53.33%;
        padding: 10px;
-       height: 100%; 
+       height: 70%; 
        overflow-x: scroll;
        overflow-y: scroll;
        /* Should be removed. Only for demonstration */
        /* border: 1px solid black; */
+     } 
+
+     .column1 .zoom{
+      font-size: 15px;
+      text-align: center;
      }
+
+     .column2 {
+      float:none;
+      position: relative;
+      width: 23.33%;
+      padding: 10px;
+      height: 70%; 
+      overflow-x: scroll;
+      overflow-y: scroll;
+      background-color: black;
+      /* Should be removed. Only for demonstration */
+      /* border: 1px solid black; */
+    }
+    
+
+    .column2 .codetbconvert{
+      background-color: black;
+      color: white;
+      font-size: 15px;
+      /* height: 100%;
+      width: 100%; */
+      border: none;
+      overflow-y: hidden;
+    }
+
+    .column3 {
+      float:none;
+      position: relative;
+      width: 100%;
+      padding: 10px;
+      height: 50%; 
+      overflow-x: scroll;
+      overflow-y: scroll;
+      background-color: black;
+      color: white;
+      
+    }
+
+    .column3 .codeoutput{
+      background-color: black;
+      color: white;
+      font-size: 15px;
+      border: none;
+      overflow-y: hidden;
+    }
+   
+    /* .column2 .callIt{
+      background-color: black;
+      color: white;
+      font-size: 15px;
+      border: none;
+      overflow-y: hidden;
+    } */
      
      /* Clear floats after the columns */
      .row{
@@ -331,6 +389,7 @@
      
      textarea[placeholder="True"],
       textarea[placeholder="False"] {
+        
         pointer-events: none;
         user-select: none;
        
@@ -347,7 +406,6 @@
        font-size: 20px;
        box-sizing: border-box;
        resize: none;
-     
        display: block;
        /* margin: 0 auto; */
      }
