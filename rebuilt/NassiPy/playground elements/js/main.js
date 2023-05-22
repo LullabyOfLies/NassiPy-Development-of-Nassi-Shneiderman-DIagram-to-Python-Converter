@@ -282,7 +282,7 @@ function dragEnter(ev) {
 }
 
 
-
+ 
 // main function starts here
 
 
@@ -290,20 +290,7 @@ function dragEnter(ev) {
 function processInput() {
 
 //CURRENT AND WORKING WELL UPDATED
-const textareas = document.querySelectorAll('#canvas textarea:not([placeholder="True"])');
-
-for (let i = 0; i < textareas.length; i++) {
-  const textarea = textareas[i];
-  const placeholder = textarea.placeholder;
-
-  if (placeholder === "Program") {
-    textarea.value = "def " + textarea.value;
-  } else if (placeholder === "ifCondition") {
-    textarea.value = "if " + textarea.value;
-  } else if (placeholder === "forCondition") {
-    textarea.value = "for " + textarea.value;
-  }
-}
+const textareas = Array.from(document.querySelectorAll('#canvas textarea:not([placeholder="True"])'));
 
 textareas.forEach((textarea) => {
   if (textarea.placeholder === "False") {
