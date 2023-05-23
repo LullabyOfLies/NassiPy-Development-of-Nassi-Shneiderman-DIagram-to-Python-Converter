@@ -75,7 +75,7 @@ html {
 }
 
 body{
-  /* background: linear-gradient(to bottom, #101226, #111326, #131426, #141526, #151626, #1c1d2f, #232439, #2b2b43, #3b3b5a, #4d4c72, #5f5d8a, #726fa4); */
+  background-image: linear-gradient(to right top, #08bef2, #00b7f2, #00aff2, #00a7f1, #009fef, #0097ee, #008fed, #0087eb, #007cea, #0071e9, #0066e6, #1859e2);
   height: 100%;
   width: auto;
   font-family: 'Lato', sans-serif;
