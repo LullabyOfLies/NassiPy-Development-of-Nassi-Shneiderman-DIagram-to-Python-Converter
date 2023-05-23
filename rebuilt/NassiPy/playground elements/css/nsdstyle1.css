@@ -44,17 +44,12 @@
      textarea {
        /* max-width: 20vw; */
        width: 100%;
-       
+       font-size: clamp(0.3125rem, -0.8594rem + 3.75vw, 1.25rem);
      }
      
-     
-     /* body {
-       margin: 0;
-       background-image: radial-gradient(#D7D7D7 20%, transparent 20%);
-       background-color: #FFFFFF;
-       background-position: 0 0, 50px 50px;
-       background-size: 20px 20px;
-       overflow: hidden;
+/*      
+     body {
+      background-color: #1b1b32;
      } */
      
      .menu {
@@ -157,19 +152,19 @@
       width: 100%;
       padding: 10px;
       height: 50%; 
-      overflow-x: scroll;
+      overflow-x: auto;
       overflow-y: scroll;
-      background-color: black;
+      background-color: white;
       color: white;
-      
     }
 
-    .column3 .codeoutput{
+    .column2 .convertedcode{
       background-color: black;
       color: white;
       font-size: 15px;
       border: none;
       overflow-y: hidden;
+      text-align: center;
     }
    
     /* .column2 .callIt{
@@ -185,7 +180,7 @@
        display: flex;
        /* margin: 0 auto; */
        /* padding: 0 auto; */
-       
+       background-color: white;
        width: 100vw;
       border: ridge;
       height: 70vh;
@@ -342,6 +337,7 @@
        min-height: 100%;
        background-color: transparent;
        padding-bottom: 10%;
+       
        /* margin-left: 25%; */
        /* padding-left: 10px;
        padding-right: 30px; */
@@ -403,7 +399,7 @@
        border: 3px solid #FFFFFF00;
        background-color: #FFFFFF00;
        width: 100%;
-       font-size: 20px;
+       font-size: 15px;
        box-sizing: border-box;
        resize: none;
        display: block;
@@ -729,6 +725,6 @@
        }
      
        body {
-         background: none;
+        background-color: #1b1b32;
        }
      }
