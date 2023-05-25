@@ -462,32 +462,29 @@ while (currentNode) {
 
       
       if (previousNode && currentNode.value.trim().startsWith("elif")) {
-     
-
+    
         const highestLevel = Math.max(...ifCountArr1.map(node => node.level));
-
         ifCountArr1.splice(ifCountArr1.findIndex(node => node.level === highestLevel), 1);
-        
-        
-       
-       
-          if (elifCountArr.length < ifCountArr1.length) {
+          if (elifCountArr.length <= ifCountArr1.length) {
             // console.log(elifCountArr);
-            
-            if(ifCountArr.length > 1){
+  
+            if(ifCountArr1.length > 1){
             currentNode.level = highestLevel;
             // console.log(currentNode);
             // console.log(elifCountArr);
             }else{
+              console.log(elifCountArr);
               currentNode.level = 2;
            
             }
           }
            else {
-            currentNode.level = 2;
+            // console.log(elifCountArr);
+            currentNode.level = highestLevel;
         
           }
         }
+        // console.log(currentNode);
           // console.log(ifCountArr1);
           // console.log(elifCountArr);
   }  
@@ -495,7 +492,7 @@ while (currentNode) {
     let mostRecentElseLevel = -1;
     let prevNode = previousNode;
     
-    // console.log(elseCountArr);
+    console.log(ifCountArr);
     // Traverse linked list backwards to find the most recent else node
     while (prevNode) {
       if (prevNode.value.trim().startsWith("if")) {
@@ -520,7 +517,8 @@ while (currentNode) {
           highestNode = node;
         }
       }
-     
+     console.log(currentNode);
+     console.log(ifCountArr);
       currentNode.level = highestLevel;
       // remove the highest level node from ifCountArr
       ifCountArr.splice(ifCountArr.indexOf(highestNode), 1);
@@ -531,42 +529,31 @@ while (currentNode) {
    
   }
   // check if the current node is not an if/else/elif/def/for statement
-  else if (!currentNode.value.trim().startsWith("for") && !currentNode.value.trim().startsWith("elif") && !currentNode.value.trim().startsWith("def") && !currentNode.value.trim().startsWith("if") && !currentNode.value.trim().startsWith("else")) { //meaning print
-    if (previousNode.value.trim().startsWith("if") || previousNode.value.trim().startsWith("else") || previousNode.value.trim().startsWith("elif") || previousNode.value.trim().startsWith("for") || previousNode.value.trim().startsWith("def")) { //previous node ng print
-      // console.log(previousNode);
-      // console.log(currentNode);
-      currentNode.level = previousNode.level + 2;
-      
-
-    }else if (!currentNode.value.trim().startsWith("for") && !currentNode.value.trim().startsWith("elif") && !currentNode.value.trim().startsWith("def") && !currentNode.value.trim().startsWith("if") && !currentNode.value.trim().startsWith("else")) { //meaning print
-      if (!previousNode.value.trim().startsWith("if") && !previousNode.value.trim().startsWith("else") && !previousNode.value.trim().startsWith("elif") && !previousNode.value.trim().startsWith("for") && !previousNode.value.trim().startsWith("def") && previousNode.level > 2 && nextNode !== null) { //previous node ng print
-        console.log(previousNode);
-        console.log(currentNode);
-        console.log(nextNode);
-        currentNode.level = previousNode.level;
+  else if (!currentNode.value.trim().startsWith("for") && !currentNode.value.trim().startsWith("elif") && !currentNode.value.trim().startsWith("def") && !currentNode.value.trim().startsWith("if") && !currentNode.value.trim().startsWith("else")) {
+    if (previousNode.value.trim().startsWith("if") || previousNode.value.trim().startsWith("else") || previousNode.value.trim().startsWith("elif") || previousNode.value.trim().startsWith("for") || previousNode.value.trim().startsWith("def")) {
+        currentNode.level = previousNode.level + 2;
     } else {
-      currentNode.level = previousNode.level+2;
+        currentNode.level = previousNode.level;
     }
-    }else{
-      currentNode.level = previousNode.level;
-    }
+    
 }
+
 // check if the current node is not an if/else/elif/def/for statement but the previous node is equals to print
 
 else if(previousNode && !(previousNode.value.trim().startsWith("if")) && !(previousNode.value.trim().startsWith("def")) && !(previousNode.value.trim().startsWith("for")) && !(previousNode.value.trim().startsWith("elif")) && !(previousNode.value.trim().startsWith("else")) && currentNode.value.trim().startsWith("for")){
   currentNode.level = previousNode.level;
-  console.log(previousNode.level);  
-  console.log(currentNode.level);
+  // console.log(previousNode.level);  
+  // console.log(currentNode.level);
   // console.log(nextNode);
 } else if(previousNode && !(previousNode.value.trim().startsWith("if")) && !(previousNode.value.trim().startsWith("def")) && (previousNode.value.trim().startsWith("for")) && !(previousNode.value.trim().startsWith("elif")) && !(previousNode.value.trim().startsWith("else")) && currentNode.value.trim().startsWith("for")){
   currentNode.level = previousNode.level+2;
-  console.log(previousNode);  
-  console.log(currentNode);
+  // console.log(previousNode);  
+  // console.log(currentNode);
   // console.log(nextNode);
 } else if(previousNode && (previousNode.value.trim().startsWith("def")) && currentNode.value.trim().startsWith("for")){
   currentNode.level = previousNode.level+2;
-  console.log(previousNode.level);  
-  console.log(currentNode.level);
+  // console.log(previousNode.level);  
+  // console.log(currentNode.level);
   // console.log(nextNode);
 }
 
@@ -1175,6 +1162,11 @@ function upload() {
   }
 
   input.click();
+  console.clear();
+  const textarea = document.querySelector('textarea.codetbconvert');
+  if (textarea) {
+    textarea.value = '';
+  }
 }
 
 
