@@ -442,7 +442,7 @@ while (currentNode) {
     if (previousNode && (previousNode.value.trim().startsWith("if") || previousNode.value.trim().startsWith("def")) || previousNode.value.trim().startsWith("for") ) {
       currentNode.level = previousNode.level + 2;
     } else {
-      currentNode.level = 2;
+      currentNode.level = previousNode.level;
     }  
     ifCountArr.push({ level: currentNode.level, node: currentNode });
     ifCountArr1.push({ level: currentNode.level, node: currentNode });
@@ -488,7 +488,7 @@ while (currentNode) {
           // console.log(ifCountArr1);
           // console.log(elifCountArr);
   }  
-  else if (currentNode.value.trim().startsWith("else") && !nextNode.value.trim().startsWith("if") && !nextNode.value.trim().startsWith("elif") && !nextNode.value.trim().startsWith("for")) {
+  else if (currentNode.value.trim().startsWith("else") && !nextNode.value.trim().startsWith("if") && !nextNode.value.trim().startsWith("elif")) {
     let mostRecentElseLevel = -1;
     let prevNode = previousNode;
     
@@ -545,12 +545,17 @@ else if(previousNode && !(previousNode.value.trim().startsWith("if")) && !(previ
   // console.log(previousNode.level);  
   // console.log(currentNode.level);
   // console.log(nextNode);
-} else if(previousNode && !(previousNode.value.trim().startsWith("if")) && !(previousNode.value.trim().startsWith("def")) && (previousNode.value.trim().startsWith("for")) && !(previousNode.value.trim().startsWith("elif")) && !(previousNode.value.trim().startsWith("else")) && currentNode.value.trim().startsWith("for")){
+}else if(previousNode && !(previousNode.value.trim().startsWith("if")) && !(previousNode.value.trim().startsWith("def")) && (previousNode.value.trim().startsWith("for")) && !(previousNode.value.trim().startsWith("elif")) && !(previousNode.value.trim().startsWith("else")) && currentNode.value.trim().startsWith("for")){
   currentNode.level = previousNode.level+2;
   // console.log(previousNode);  
   // console.log(currentNode);
   // console.log(nextNode);
 } else if(previousNode && (previousNode.value.trim().startsWith("def")) && currentNode.value.trim().startsWith("for")){
+  currentNode.level = previousNode.level+2;
+  // console.log(previousNode.level);  
+  // console.log(currentNode.level);
+  // console.log(nextNode);
+} else if(previousNode && (previousNode.value.trim().startsWith("else")) && currentNode.value.trim().startsWith("for")){
   currentNode.level = previousNode.level+2;
   // console.log(previousNode.level);  
   // console.log(currentNode.level);
