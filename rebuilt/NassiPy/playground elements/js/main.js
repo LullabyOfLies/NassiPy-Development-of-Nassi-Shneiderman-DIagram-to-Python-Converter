@@ -75,12 +75,13 @@ function clearCanvas() {
 
   if (confirm("Unsaved changes will be lost.")) {
     clrCanvas();
+    console.clear();
+    const textarea = document.querySelector('textarea.codetbconvert');
+    if (textarea) {
+      textarea.value = '';
+    }
   }
-  console.clear();
-  const textarea = document.querySelector('textarea.codetbconvert');
-  if (textarea) {
-    textarea.value = '';
-  }
+
   
   
 }
@@ -196,7 +197,7 @@ function setDropareaDefaultColor(dr) {
     if (dr.classList.contains("drop-before-begin")) {
       dr.style.backgroundColor = "transparent";
     } else {
-      dr.style.backgroundColor = "white";
+      dr.style.backgroundColor = "transparent";
     }
     dr.style.borderColor = "#7f7f7f";
 
@@ -305,6 +306,8 @@ textareas.forEach((textarea) => {
 const emptyTextarea = textareas.find(textarea => textarea.value === '');
 if (emptyTextarea) {
   console.log(`There's an empty textarea with placeholder "${emptyTextarea.placeholder}"`);
+  alert(`There's an empty textarea with placeholder "${emptyTextarea.placeholder}"`);
+
 } else {
   const dropareas = document.querySelectorAll('#canvas .droparea');
 
@@ -345,6 +348,8 @@ if (emptyTextarea) {
         hasMatch = true;
       } else {
         console.log(`error input: "${input}"`);
+        alert('error input: "' + input + '"');
+
         hasMatch = false;
       }
     });
@@ -373,9 +378,13 @@ if (emptyTextarea) {
 (function() {
   const ifelStatements = document.querySelectorAll("#ifelstatement");
   ifelStatements.forEach(ifelStatement => {
-    ifelStatement.style.backgroundColor = "#FF6347";
+    Object.defineProperty(ifelStatement.style, "backgroundColor", {
+      writable: false,
+      value: "#FF6347",
+    });
   });
 })();
+
 
 //this below is for iteration diagram
 (function() {
@@ -424,164 +433,6 @@ currentNode.level = 0;
 let callFunct = currentNode.value;
 callFunct = callFunct.replace('def', '');
 
-// console.log(callFunct);
-// console.log(currentNode);
-
-// traverse the linked list
-// while (currentNode) {
-//   // check if the current node is an if statement
-//   if (currentNode.value.trim().startsWith("if")) {
-//     if (previousNode && (previousNode.value.trim().startsWith("if") || previousNode.value.trim().startsWith("def")) || previousNode.value.trim().startsWith("for") ) {
-//       currentNode.level = previousNode.level + 2;
-//     } else {
-//       currentNode.level = 2;
-//     }  
-//     ifCountArr.push({ level: currentNode.level, node: currentNode });
-//     ifCountArr1.push({ level: currentNode.level, node: currentNode });
-//     }else if (previousNode && currentNode.value.trim().startsWith("else") && nextNode.value.trim().startsWith("if")) {
-//       let tempNode=previousNode.level;
-//       currentNode.level = tempNode;
-//       currentNode.next = nextNode.next;
-//       if (nextNode.value.trim().startsWith("if")) {
-//         nextNode.value = "elif" + nextNode.value.substring(2);
-//       }
-//       nextNode.level = currentNode.level;
-//       currentNode.value = nextNode.value;
-//       currentNode.level = nextNode.level;
-//       currentNode.next = nextNode.next;
-//       nextNode = currentNode.next;
-//       elifCountArr.push({ level: currentNode.level, node: currentNode });
-
-      
-//       if (previousNode && currentNode.value.trim().startsWith("elif")) {
-     
-
-//         const highestLevel = Math.max(...ifCountArr1.map(node => node.level));
-
-//         ifCountArr1.splice(ifCountArr1.findIndex(node => node.level === highestLevel), 1);
-        
-        
-       
-       
-//           if (elifCountArr.length < ifCountArr1.length) {
-//             // console.log(elifCountArr);
-            
-//             if(ifCountArr.length > 1){
-//             currentNode.level = highestLevel;
-//             // console.log(currentNode);
-//             // console.log(elifCountArr);
-//             }else{
-//               currentNode.level = 2;
-           
-//             }
-//           }
-//            else {
-//             currentNode.level = 2;
-        
-//           }
-//         }
-//           // console.log(ifCountArr1);
-//           // console.log(elifCountArr);
-//   }    
-//   else if (currentNode.value.trim().startsWith("else") && !nextNode.value.trim().startsWith("if") && !nextNode.value.trim().startsWith("elif")) {
-//     let mostRecentElseLevel = -1;
-//     let prevNode = previousNode;
-    
-//     // console.log(elseCountArr);
-//     // Traverse linked list backwards to find the most recent else node
-//     while (prevNode) {
-//       if (prevNode.value.trim().startsWith("if")) {
-//         break;
-//       } else if (prevNode.value.trim().startsWith("else")) {
-//         mostRecentElseLevel = prevNode.level;
-//       }
-//       prevNode = prevNode.previous;
-//     }
-  
-//     if (ifCountArr.length === 0 && highestLevel === -1) {
-//       // Set the level of the currentNode to the level of the most recent else node
-//       currentNode.level = mostRecentElseLevel;
-//     }else {
-//       // find the highest level node in ifCountArr and set it as the level of the current node
-//       let highestNode = null;
-//       let highestLevel = -1;
-//       for (let i = 0; i < ifCountArr.length; i++) {
-//         const { level, node } = ifCountArr[i];
-//         if (level > highestLevel) {
-//           highestLevel = level;
-//           highestNode = node;
-//         }
-//       }
-     
-//       currentNode.level = highestLevel;
-//       // remove the highest level node from ifCountArr
-//       ifCountArr.splice(ifCountArr.indexOf(highestNode), 1);
-  
-//     }
-//     elseCountArr.push({ level: currentNode.level, node: currentNode }); // Add elif node to elifCountArr
-
-   
-//   }
-//   // check if the current node is not an if/else/elif/def statement
-//   else if (!currentNode.value.trim().startsWith("elif") && !currentNode.value.trim().startsWith("def") && !currentNode.value.trim().startsWith("if") && !currentNode.value.trim().startsWith("else")) {
-//     if (previousNode.value.trim().startsWith("if") || previousNode.value.trim().startsWith("else") || previousNode.value.trim().startsWith("elif") || previousNode.value.trim().startsWith("for") || previousNode.value.trim().startsWith("def")) {
-//       currentNode.level = previousNode.level + 2;
-//     } else {
-//       currentNode.level = previousNode.level;
-//     }
-// }
-
-//   // output node with level
-//   // const count = Math.max(0, currentNode.level);
-//   // // console.log(`${indention.repeat(count)}${currentNode.value}`);
-//   // const codetbconvert = document.querySelector('p.codetbconvert');
-//   // const indentedValue = `${indention.repeat(count)}${currentNode.value}`.replace(/ /g, '&nbsp;');
-//   // codetbconvert.innerHTML += `${indentedValue}<br>`;
-  
-//   //output node with level but in textarea
-//   const count = Math.max(0, currentNode.level);
-//   const codetbconvert = document.querySelector('textarea.codetbconvert');
-//   const indentedValue = `${indention.repeat(count)}${currentNode.value}`;
-//   codetbconvert.value += `${indentedValue}\n`;
-  
-//   // const textarea = document.querySelector('textarea.codetbconvert');
-//   // const copiedText = textarea.value;
-//   // console.log(copiedText);
-  
-
-
-//   //this code below is for the textarea
-//   // const textarea = document.querySelector('textarea.callIt');
-//   // textarea.value = callFunct + '\n';
-  
-
-
-  
-//   //this code is for the output but added the callfunction of the `def`
-//   // const count = Math.max(0, currentNode.level);
-//   // const codetbconvert = document.querySelector('p.codetbconvert');
-//   // const indentedValue = `${indention.repeat(count)}${currentNode.value}`.replace(/ /g, '&nbsp;');
-  
-//   // let output = indentedValue;
-  
-//   // // Check if it is the last node
-//   // if (currentNode.next === null) {
-//   //   output += `<br>${callFunct}`;
-//   // }
-  
-//   // output += '<br>';
-//   // codetbconvert.innerHTML += output;
-
-
-
-  
-//   // update variables for next iteration
-//   previousNode = currentNode;
-//   currentNode = nextNode;
-//   if (nextNode) {
-//     nextNode = nextNode.next;
-//   }
-// }
 
 //revisions 
 
@@ -694,7 +545,7 @@ while (currentNode) {
         console.log(nextNode);
         currentNode.level = previousNode.level;
     } else {
-      currentNode.level = previousNode.level-2;
+      currentNode.level = previousNode.level+2;
     }
     }else{
       currentNode.level = previousNode.level;
@@ -703,16 +554,21 @@ while (currentNode) {
 // check if the current node is not an if/else/elif/def/for statement but the previous node is equals to print
 
 else if(previousNode && !(previousNode.value.trim().startsWith("if")) && !(previousNode.value.trim().startsWith("def")) && !(previousNode.value.trim().startsWith("for")) && !(previousNode.value.trim().startsWith("elif")) && !(previousNode.value.trim().startsWith("else")) && currentNode.value.trim().startsWith("for")){
-  currentNode.level = previousNode.level-2;
-  console.log(previousNode);  
-  console.log(currentNode);
+  currentNode.level = previousNode.level;
+  console.log(previousNode.level);  
+  console.log(currentNode.level);
   // console.log(nextNode);
 } else if(previousNode && !(previousNode.value.trim().startsWith("if")) && !(previousNode.value.trim().startsWith("def")) && (previousNode.value.trim().startsWith("for")) && !(previousNode.value.trim().startsWith("elif")) && !(previousNode.value.trim().startsWith("else")) && currentNode.value.trim().startsWith("for")){
   currentNode.level = previousNode.level+2;
   console.log(previousNode);  
   console.log(currentNode);
   // console.log(nextNode);
-} 
+} else if(previousNode && (previousNode.value.trim().startsWith("def")) && currentNode.value.trim().startsWith("for")){
+  currentNode.level = previousNode.level+2;
+  console.log(previousNode.level);  
+  console.log(currentNode.level);
+  // console.log(nextNode);
+}
 
   // output node with level
   // const count = Math.max(0, currentNode.level);
@@ -1179,19 +1035,21 @@ document.addEventListener("mousedown", (event) => {
   if (event.target.classList.contains("dblock")) {
 
     if (selectedElement != null) {
-      selectedElement.style.backgroundColor = "";
+      selectedElement.style.backgroundColor = "transparent";
     }
 
     selectedElement = event.target;
-    selectedElement.style.backgroundColor = "#ffebeb";
+    // selectedElement.style.backgroundColor = selectedElement.style.backgroundColor;
+  selectedElement.style.borderColor = "red";    
 
   } else if (event.target.classList.contains("drop-before-begin")) {
     if (selectedElement != null) {
-      selectedElement.style.backgroundColor = "";
+      
+      // selectedElement.style.backgroundColor = selectedElement.style.backgroundColor;
     }
 
     selectedElement = event.target.parentElement;
-    selectedElement.style.backgroundColor = "#ffebeb";
+    // selectedElement.style.backgroundColor = selectedElement.style.backgroundColor;
 
   }
 });
