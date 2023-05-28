@@ -286,6 +286,16 @@ function dragEnter(ev) {
  
 // main function starts here
 
+function checkTextAreaCount() {
+  var canvas = document.querySelector('#canvas');
+  var textAreas = canvas.querySelectorAll('textarea:not([placeholder="True"])');
+  
+  if (textAreas.length < 10) {
+    processInput();
+  } else {
+    alert("The converter limit is 6 diagram blocks");
+  }
+}
 
 //initial parser
 function processInput() {
