@@ -536,31 +536,52 @@ while (currentNode) {
     }
     elseCountArr.push({ level: currentNode.level, node: currentNode }); // Add elif node to elifCountArr
 
-   
-  }
-  // check if the current node is not an if/else/elif/def/for statement
-  else if (!currentNode.value.trim().startsWith("for") && !currentNode.value.trim().startsWith("elif") && !currentNode.value.trim().startsWith("def") && !currentNode.value.trim().startsWith("if") && !currentNode.value.trim().startsWith("else")) {
-    if (previousNode.value.trim().startsWith("if") || previousNode.value.trim().startsWith("else") || previousNode.value.trim().startsWith("elif") || previousNode.value.trim().startsWith("for") || previousNode.value.trim().startsWith("def")) {
+ 
+    
+} else if (!currentNode.value.trim().startsWith("for") && !currentNode.value.trim().startsWith("elif") && !currentNode.value.trim().startsWith("def") && !currentNode.value.trim().startsWith("if") && !currentNode.value.trim().startsWith("else") && !currentNode.value.trim().startsWith("while")) {
+  //this code block is to check if the currentNode is a print or any self-initialization 
+    if (previousNode.value.trim().startsWith("if") || previousNode.value.trim().startsWith("else") || previousNode.value.trim().startsWith("elif") || previousNode.value.trim().startsWith("for") || previousNode.value.trim().startsWith("def") || previousNode.value.trim().startsWith("while") && currentNode.level >= 2) {
         currentNode.level = previousNode.level + 2;
-    } else {
+    }else if(previousNode.value.trim().startsWith("return") || previousNode.value.trim().startsWith("break") && currentNode.level >= 2){
+      currentNode.level = previousNode.level - 2;
+    }
+     else {
         currentNode.level = previousNode.level;
     }
     
-}
-
-// check if the current node is not an if/else/elif/def/for statement but the previous node is equals to print
-
-else if(previousNode && !(previousNode.value.trim().startsWith("if")) && !(previousNode.value.trim().startsWith("def")) && !(previousNode.value.trim().startsWith("for")) && !(previousNode.value.trim().startsWith("elif")) && !(previousNode.value.trim().startsWith("else")) && currentNode.value.trim().startsWith("for")){
+}else if(previousNode && !(previousNode.value.trim().startsWith("if")) && !(previousNode.value.trim().startsWith("def")) && !(previousNode.value.trim().startsWith("for")) && !(previousNode.value.trim().startsWith("elif")) && !(previousNode.value.trim().startsWith("else")) && currentNode.value.trim().startsWith("for")){
+  //kung yung previous node ay print or iba pa pero yung currentNode ay for dapat parehas sila ng level
   currentNode.level = previousNode.level;
   // console.log(previousNode.level);  
   // console.log(currentNode.level);
   // console.log(nextNode);
-}else if(previousNode && !(previousNode.value.trim().startsWith("if")) && !(previousNode.value.trim().startsWith("def")) && (previousNode.value.trim().startsWith("for")) && !(previousNode.value.trim().startsWith("elif")) && !(previousNode.value.trim().startsWith("else")) && currentNode.value.trim().startsWith("for")){
+}else if(previousNode && !(previousNode.value.trim().startsWith("if")) && !(previousNode.value.trim().startsWith("def")) && !(previousNode.value.trim().startsWith("for")) && !(previousNode.value.trim().startsWith("elif")) && !(previousNode.value.trim().startsWith("else")) && currentNode.value.trim().startsWith("while")){
+  //kung yung previous node ay print or iba pa pero yung currentNode ay while dapat parehas sila ng level
+  currentNode.level = previousNode.level;
+  // console.log(previousNode.level);  
+  // console.log(currentNode.level);
+  // console.log(nextNode);
+}
+else if(previousNode && !(previousNode.value.trim().startsWith("if")) && !(previousNode.value.trim().startsWith("def")) && (previousNode.value.trim().startsWith("for")) && !(previousNode.value.trim().startsWith("elif")) && !(previousNode.value.trim().startsWith("else")) && currentNode.value.trim().startsWith("for")){
+  //kung yung previous node ay else pero yung currentNode ay for dapat +2 sa indentation
+  currentNode.level = previousNode.level+2;
+  // console.log(previousNode);  
+  // console.log(currentNode);
+  // console.log(nextNode);
+}else if(previousNode && !(previousNode.value.trim().startsWith("if")) && !(previousNode.value.trim().startsWith("def")) && (previousNode.value.trim().startsWith("for")) && !(previousNode.value.trim().startsWith("elif")) && !(previousNode.value.trim().startsWith("else")) && currentNode.value.trim().startsWith("while")){
+  //kung yung previous node ay else pero yung currentNode ay while dapat +2 sa indentation
   currentNode.level = previousNode.level+2;
   // console.log(previousNode);  
   // console.log(currentNode);
   // console.log(nextNode);
 } else if(previousNode && (previousNode.value.trim().startsWith("def")) && currentNode.value.trim().startsWith("for")){
+  //kung yung previous node ay def pero yung currentNode ay for dapat +2 sa indentation
+  currentNode.level = previousNode.level+2;
+  // console.log(previousNode.level);  
+  // console.log(currentNode.level);
+  // console.log(nextNode);
+} else if(previousNode && (previousNode.value.trim().startsWith("def")) && currentNode.value.trim().startsWith("while")){
+  //kung yung previous node ay def pero yung currentNode ay while dapat +2 sa indentation
   currentNode.level = previousNode.level+2;
   // console.log(previousNode.level);  
   // console.log(currentNode.level);
@@ -571,6 +592,13 @@ else if(previousNode && !(previousNode.value.trim().startsWith("if")) && !(previ
   // console.log(currentNode.level);
   // console.log(nextNode);
 }
+// else if (!currentNode.value.trim().startsWith("for") && !currentNode.value.trim().startsWith("elif") && !currentNode.value.trim().startsWith("def") && !currentNode.value.trim().startsWith("if") && !currentNode.value.trim().startsWith("else") && !currentNode.value.trim().startsWith("while") && currentNode.level >= 2){
+//   if (previousNode.value.trim().startsWith("return") || previousNode.value.trim().startsWith("break")) {
+//     currentNode.level = previousNode.level - 4;
+// } else {
+//     currentNode.level = previousNode.level;
+// }
+// }
 
   // output node with level
   // const count = Math.max(0, currentNode.level);
