@@ -26,6 +26,17 @@ function scoreValidation() {
     } else {
       alert("Congrats! Your score meets the minimum requirement.");
     }
+  }else{
+    const alertMessage = `Sorry, your latest Quiz score (${latestScore}) doesn't meet the minimum score to access the playground. Learn more on the tutorials then take the quiz again.`;
+      const alertButton = 'Okay';
+
+      // Show the alert dialog
+      alert(alertMessage);
+
+      // Delay the redirect to google.com after the alert dialog is closed
+      setTimeout(function() {
+        window.location.href = '../screens/tutorials/tutorials-python/tutorials-python-introduction.html';
+      }, 0);
   }
 }
 
