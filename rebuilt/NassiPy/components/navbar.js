@@ -19,6 +19,7 @@ class Navbar extends HTMLElement{
                         <div class="navbar-nav mr-auto">
                             <a class="nav-link" href="../index.html">HOME</a>
                             <a class="nav-link" href="./tutorials.html">TUTORIALS</a>
+                            <a class="nav-link" href="./quiz.html">QUIZ</a>
                             <a class="nav-link" href="./playground.html">PLAYGROUND</a>
                             <a class="nav-link" href="./about-us.html">ABOUT US</a>
                         </div>
