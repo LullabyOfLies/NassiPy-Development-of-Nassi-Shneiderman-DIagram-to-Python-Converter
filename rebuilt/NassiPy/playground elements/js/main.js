@@ -334,9 +334,9 @@ if (emptyTextarea) {
   });
 
   if (trueEmpty && falseEmpty) {
-    console.log('both empty');
+    alert('both true and else is empty');
   } else if (trueEmpty && !falseEmpty) {
-    console.log('true is empty');
+    alert('true is empty');
   } else {
     let hasMatch = false;
 
@@ -543,7 +543,7 @@ while (currentNode) {
     if (previousNode.value.trim().startsWith("if") || previousNode.value.trim().startsWith("else") || previousNode.value.trim().startsWith("elif") || previousNode.value.trim().startsWith("for") || previousNode.value.trim().startsWith("def") || previousNode.value.trim().startsWith("while") && currentNode.level >= 2) {
         currentNode.level = previousNode.level + 2;
     }else if(previousNode.value.trim().startsWith("return") || previousNode.value.trim().startsWith("break") && currentNode.level >= 2){
-      currentNode.level = previousNode.level - 2;
+      currentNode.level = previousNode.level - 4;
     }
      else {
         currentNode.level = previousNode.level;
