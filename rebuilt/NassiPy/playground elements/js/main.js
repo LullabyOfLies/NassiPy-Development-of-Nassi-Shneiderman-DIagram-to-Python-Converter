@@ -1,4 +1,37 @@
 
+scoreValidation() 
+function scoreValidation() {
+  // Retrieve the stored scoreData from the local storage
+  const storedScoreData = localStorage.getItem('scoreData');
+
+  // Check if there is storedScoreData in the local storage
+  if (storedScoreData) {
+    // Parse the storedScoreData from JSON back to an object
+    const scoreData = JSON.parse(storedScoreData);
+    const latestScore = scoreData.score;
+
+    // Check if the latest score is less than 15
+    if (latestScore < 15) {
+      // Display an alert message with a button linked to "../../quiz.html"
+      const alertMessage = `Sorry, your latest Quiz score (${latestScore}) doesn't meet the minimum score to access the playground. Learn more on the tutorials then take the quiz again.`;
+      const alertButton = 'Okay';
+
+      // Show the alert dialog
+      alert(alertMessage);
+
+      // Delay the redirect to google.com after the alert dialog is closed
+      setTimeout(function() {
+        window.location.href = '../screens/tutorials/tutorials-python/tutorials-python-introduction.html';
+      }, 0);
+    } else {
+      alert("Congrats! Your score meets the minimum requirement.");
+    }
+  }
+}
+
+
+
+
 console.clear();
 
 let undoList = [];

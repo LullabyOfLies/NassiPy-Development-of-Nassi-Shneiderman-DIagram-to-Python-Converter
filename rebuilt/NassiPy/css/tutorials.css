@@ -1,3 +1,17 @@
+/* Tutorials */
+#tutorials .title {
+    font-family: "Lato", sans-serif;
+    font-weight: 500;
+    color: #fff;
+    text-align: center;
+}
+#tutorials .subtitle {
+    font-family: "Lato", sans-serif;
+    font-weight: 300;
+    color: #fff;
+    text-align: center;
+}
+
 /* Nassi Shneiderman */
 #nassi-section {
     min-height: 100vh;
@@ -9,12 +23,98 @@
     padding-bottom: 50px;
 }
 #nassi-section h1 {
+    font-family: "Lato", sans-serif;
+    font-weight: 300;
     color: #fff;
     margin-bottom: 20px;
+}
+#nassi-section h1 span {
+    font-family: "Lato", sans-serif;
+    font-weight: 500;
+}
+#nassi-section p,
+#nassi-section li {
+    color: skyblue;
+}
+#nassi-section a {
+    background-image: -moz-linear-gradient(0deg, #06c6f9 0%, #38eaf9 100%);
+    background-image: -webkit-linear-gradient(0deg, #06c6f9 0%, #38eaf9 100%);
+    background-image: -ms-linear-gradient(0deg, #06c6f9 0%, #38eaf9 100%);
+    font-size: 18px;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 600;
+    color: #fff;
+    border-radius: 50px;
+    padding: 5px 30px;
+    display: inline-block;
+    text-transform: uppercase;
+    padding-right: 5px;
+    text-decoration: none !important;
+}
+#nassi-section a .fa {
+    background: #fff;
+    border-radius: 50%;
+    height: 32px;
+    width: 32px;
+    color: #37eaf9;
+    font-size: 22px;
+    text-align: center;
+    padding-top: 5px;
+    margin-left: 15px;
 }
 
 /* Python */
 #python-section {
+    min-height: 100vh;
+    width: 100%;
+    display: grid;
+    align-items: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+#python-section h1 {
+    font-family: "Lato", sans-serif;
+    font-weight: 300;
+    color: #fff;
+    margin-bottom: 20px;
+}
+#python-section h1 span {
+    font-family: "Lato", sans-serif;
+    font-weight: 500;
+}
+#python-section p,
+#python-section li {
+    color: #fff;
+}
+#python-section a {
+    background-image: -moz-linear-gradient(0deg, #4A4A8A 0%, #6D6DC9 100%);
+    background-image: -webkit-linear-gradient(0deg, #4A4A8A 0%, #6D6DC9 100%);
+    background-image: -ms-linear-gradient(0deg, #4A4A8A 0%, #6D6DC9 100%);
+    font-size: 18px;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 600;
+    color: #fff;
+    border-radius: 50px;
+    padding: 5px 30px;
+    display: inline-block;
+    text-transform: uppercase;
+    padding-right: 5px;
+    text-decoration: none !important;
+}
+#python-section a .fa {
+    background: #fff;
+    border-radius: 50%;
+    height: 32px;
+    width: 32px;
+    color: #6D6DC9;
+    font-size: 22px;
+    text-align: center;
+    padding-top: 5px;
+    margin-left: 15px;
+}
+
+/* NassiPy Section */
+#nassipy-section {
     min-height: 100vh;
     width: 100%;
     background-color: #0fb9e8;
@@ -23,30 +123,223 @@
     padding-top: 50px;
     padding-bottom: 50px;
 }
-#python-section h1 {
+#nassipy-section h1 {
+    font-family: "Lato", sans-serif;
+    font-weight: 300;
     color: #1b1b32;
     margin-bottom: 20px;
 }
-#python-section p {
+#nassipy-section h1 span {
+    font-family: "Lato", sans-serif;
+    font-weight: 500;
+}
+#nassipy-section p,
+#nassipy-section li {
     color: #1b1b32;
 }
+#nassipy-section a {
+    background-image: -moz-linear-gradient(0deg, #2B2B4F 0%, #6060B3 100%);
+    background-image: -webkit-linear-gradient(0deg, #2B2B4F 0%, #6060B3 100%);
+    background-image: -ms-linear-gradient(0deg, #2B2B4F 0%, #6060B3 100%);
+    font-size: 18px;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 600;
+    color: #fff;
+    border-radius: 50px;
+    padding: 5px 30px;
+    display: inline-block;
+    text-transform: uppercase;
+    padding-right: 5px;
+    text-decoration: none !important;
+}
+#nassipy-section a .fa {
+    background: #fff;
+    border-radius: 50%;
+    height: 32px;
+    width: 32px;
+    color: #454580;
+    font-size: 22px;
+    text-align: center;
+    padding-top: 5px;
+    margin-left: 15px;
+}
 
+/* iframe */
 #nassi-section iframe,
-#python-section iframe {
+#python-section iframe,
+#nassipy-section iframe {
     position: relative;
     aspect-ratio: auto 16/9;
     width: 100%;
 }
 
-#playground-section {
-    min-height: 100vh;
-    width: 100%;
-    display: grid;
-    align-items: center;
-    padding-top: 50px;
-    padding-bottom: 50px;
+#nassi-section a,
+#python-section a,
+#nassipy-section a {
+    display: inline;
+    padding: 10px 30px;
+    padding-right: 5px;
 }
-#playground-section h1 {
+
+/* Python Tutorials */
+#nassi-section .code-block-container {
+    padding: 20px;
+    margin: 20px 0;
+    background-color: #A9A9C9;
+    border-radius: 7.5px;
+}
+#python-section .code-block-container {
+    padding: 20px;
+    margin: 20px 0;
+    background-color: #6B6B80;
+    border-radius: 7.5px;
+}
+
+#nassipy-section .code-block-container {
+    padding: 20px;
+    margin: 20px 0;
+    background-color: #0A86A8;
+    border-radius: 7.5px;
+}
+#nassi-section .code-block-container h3,
+#python-section .code-block-container h3,
+#nassipy-section .code-block-container h3,
+#nassi-section .code-block-container p,
+#python-section .code-block-container p,
+#nassipy-section .code-block-container p {
+    color: #1b1b32;
+}
+#nassi-section .code-block-container-error,
+#python-section .code-block-container-error,
+#nassipy-section .code-block-container-error {
+    padding: 20px;
+    margin: 20px 0;
+    background-color: #ffc0c7;
+    border-radius: 7.5px;
+}
+#nassi-section .code-block-container-error h3,
+#python-section .code-block-container-error h3,
+#nassipy-section .code-block-container-error h3,
+#nassi-section .code-block-container-error p,
+#python-section .code-block-container-error p,
+#nassipy-section .code-block-container-error p {
+    color: #403032;
+}
+#nassi-section .code-block,
+#python-section .code-block,
+#nassipy-section .code-block {
+    background-color: #1a1b1f;
+    padding: 15px 30px;
+    word-wrap: break-word;
+    border-radius: 7.5px;
+}
+#nassi-section code,
+#python-section code,
+#nassipy-section code {
+    font-family: monospace;
+    font-size: 18px;
+    color: #fdfbff;
+    display: block;
+    background: none;
+    white-space: pre;
+    overflow-x: auto;
+    max-width: 100%;
+    min-width: 100px;
+    padding: 0;
+}
+#nassi-section .inactive-code,
+#python-section .inactive-code,
+#nassipy-section .inactive-code,
+#nassi-section .comment,
+#python-section .comment,
+#nassipy-section .comment {
+    color: grey;
+}
+
+#nassi-section h3 > code,
+#nassi-section p > code,
+#nassi-section td > code,
+#nassi-section li > code {
+    display: inline;
+    font-weight: 500;
+    color: skyblue;
+    background: rgba(169,169,201, 0.4);
+    word-wrap: break-word;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    padding: .1rem .3rem;
+    border-radius: .2rem;
+}
+#python-section h3 > code,
+#python-section p > code,
+#python-section td > code,
+#python-section li > code {
+    display: inline;
+    font-weight: 500;
     color: #fff;
-    margin-bottom: 20px;
+    background: rgba(252,253,255, 0.4);
+    word-wrap: break-word;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    padding: .1rem .3rem;
+    border-radius: .2rem;
+}
+#nassipy-section h3 > code,
+#nassipy-section p > code,
+#nassipy-section td > code,
+#nassipy-section li > code {
+    display: inline;
+    font-weight: 500;
+    color: #1b1b32;
+    background: rgba(10,134,168, 0.4);
+    word-wrap: break-word;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    padding: .1rem .3rem;
+    border-radius: .2rem;
+}
+
+/* Tables */
+.code-table {
+    padding: 0;
+    margin: 30px 0;
+}
+#nassi-section .code-table th,
+#nassi-section .table-striped > tbody > tr:nth-child(2n+1) > th {
+    color: skyblue;
+    font-size: 20px;
+}
+#python-section .code-table th,
+#python-section .table-striped > tbody > tr:nth-child(2n+1) > th {
+    color: #fff;
+    font-size: 20px;
+}
+#nassipy-section .code-table th,
+#nassipy-section .table-striped > tbody > tr:nth-child(2n+1) > th {
+    color: #1b1b32;
+    font-size: 20px;
+}
+
+#nassi-section .code-table td,
+#nassi-section .table-striped > tbody > tr:nth-child(2n+1) > td {
+    color: skyblue;
+    font-size: 18px;
+}
+#python-section .code-table td,
+#python-section .table-striped > tbody > tr:nth-child(2n+1) > td {
+    color: #fff;
+    font-size: 18px;
+}
+#nassipy-section .code-table td,
+#nassipy-section .table-striped > tbody > tr:nth-child(2n+1) > td {
+    color: #1b1b32;
+    font-size: 18px;
+}
+
+.table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th {
+    background-color: #2B2B4F;
+}
+
+.code-table .short-cell {
+    width: 250px;
 }

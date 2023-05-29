@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Tab Display -->
+    <link rel="icon" type="image/png" href="../../../images/icon.png">
+    <title>Tutorials: Python Operators</title>
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/dfcb8f4a1a.js" crossorigin="anonymous"></script>
+ 
+    <!-- Bootstrap 5.3.0 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../../css/style.css">
+    <link rel="stylesheet" href="../../../css/navbar.css">
+    <link rel="stylesheet" href="../../../css/tutorials.css">
+    <link rel="stylesheet" href="../../../css/footer.css">
+</head>
+<body>
+    <header id="custom-navbar2">
+        <nassipy-tutorials-navbar></nassipy-tutorials-navbar>
+    </header>
+
+    <main id="tutorials">
+        <div class="container-fluid w-100 px-0">
+            <div class="container py-5">
+                <h1 class="title">Python Operators</h1>
+                <p class="subtitle">Operators are used to perform operations on variables and values.</p>
+            </div>
+
+            <section id="python-section">
+                <div class="col container">
+                    <div class="row">
+                        <div class="col-12">
+                            <h1>Python <span>Arithmetic</span> Operators</h1>
+                            <p>Arithmetic operators are used with numeric values to perform common mathematical operations:</p>
+                            <table class="table table-borderless table-striped table-responsive code-table">
+                                <thead>
+                                    <th>Operator</th>
+                                    <th>Name</th>
+                                    <th>Example</th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>+</td>
+                                        <td>Addition</td>
+                                        <td><code>x + y</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td>-</td>
+                                        <td>Subtraction</td>
+                                        <td><code>x - y</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td>*</td>
+                                        <td>Multiplication</td>
+                                        <td><code>x * y</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td>/</td>
+                                        <td>Division</td>
+                                        <td><code>x / y</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td>%</td>
+                                        <td>Modulus</td>
+                                        <td><code>x % y</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td>**</td>
+                                        <td>Exponentiation</td>
+                                        <td><code>x ** y</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td>//</td>
+                                        <td>Floor Division</td>
+                                        <td><code>x // y</code></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <br /><hr class="short-line" /><br />
+
+                    <div class="row">
+                        <div class="col-12">
+                            <h1>Python <span>Assignment</span> Operators</h1>
+                            <p>Assignment operators are used to assign values to variables:</p>
+                            <table class="table table-borderless table-striped table-responsive code-table">
+                                <thead>
+                                    <th>Operator</th>
+                                    <th>Example</th>
+                                    <th>Same As</th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>=</td>
+                                        <td><code>x = 5</code></td>
+                                        <td><code>x = 5</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td>+=</td>
+                                        <td><code>x += 3</code></td>
+                                        <td><code>x = x + 3</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td>-=</td>
+                                        <td><code>x -= 3</code></td>
+                                        <td><code>x = x - 3</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td>*=</td>
+                                        <td><code>x *= 3</code></td>
+                                        <td><code>x = x * 3</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td>/=</td>
+                                        <td><code>x /= 3</code></td>
+                                        <td><code>x = x / 3</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td>%=</td>
+                                        <td><code>x %= 3</code></td>
+                                        <td><code>x = x % 3</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td>//=</td>
+                                        <td><code>x //= 3</code></td>
+                                        <td><code>x = x // 3</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td>**=</td>
+                                        <td><code>x **= 3</code></td>
+                                        <td><code>x = x ** 3</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td>&=</td>
+                                        <td><code>x &= 3</code></td>
+                                        <td><code>x = x & 3</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td>|=</td>
+                                        <td><code>x |= 3</code></td>
+                                        <td><code>x = x | 3</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td>^=</td>
+                                        <td><code>x ^= 3</code></td>
+                                        <td><code>x = x ^ 3</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td>>>=</td>
+                                        <td><code>x >>= 3</code></td>
+                                        <td><code>x = x >> 3</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><<=</td>
+                                        <td><code>x <<= 3</code></td>
+                                        <td><code>x = x << 3</code></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <br /><hr class="short-line" /><br />
+
+                    <div class="row">
+                        <div class="col-12">
+                            <h1>Python <span>Comparison</span> Operators</h1>
+                            <p>Comparison operators are used to compare two values:</p>
+                            <table class="table table-borderless table-striped table-responsive code-table">
+                                <thead>
+                                    <th>Operator</th>
+                                    <th>Name</th>
+                                    <th>Example</th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>==</td>
+                                        <td>Equal</td>
+                                        <td><code>x == y</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td>!=</td>
+                                        <td>Not equal</td>
+                                        <td><code>x != y</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td>></td>
+                                        <td>Greater than</td>
+                                        <td><code>x > y</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><</td>
+                                        <td>Less than</td>
+                                        <td><code>x < y</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td>>=</td>
+                                        <td>Greater than or equal to</td>
+                                        <td><code>x >= y</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><=</td>
+                                        <td>Less than or equal to</td>
+                                        <td><code>x <= y</code></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <br /><hr class="short-line" /><br />
+                    
+                    <div class="row">
+                        <div class="col-12">
+                            <h1>Python <span>Logical</span> Operators</h1>
+                            <p>Logical operators are used to combine conditional statements:</p>
+                            <table class="table table-borderless table-striped table-responsive code-table">
+                                <thead>
+                                    <th>Operator</th>
+                                    <th>Description</th>
+                                    <th>Example</th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>and</td>
+                                        <td>Returns True if both statements are true</td>
+                                        <td><code>x < 5 and  x < 10</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td>or</td>
+                                        <td>Returns True if one of the statements is true</td>
+                                        <td><code>x < 5 or x < 4</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td>not</td>
+                                        <td>Reverse the result, returns False if the result is true</td>
+                                        <td><code>not(x < 5 and x < 10)</code></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <br /><hr class="short-line" /><br />
+
+                    <div class="row">
+                        <div class="col-12">
+                            <h1>Python <span>Identity</span> Operators</h1>
+                            <p>Identity operators are used to compare the objects, not if they are equal, but if they are actually the same object, with the same memory location:</p>
+                            <table class="table table-borderless table-striped table-responsive code-table">
+                                <thead>
+                                    <th>Operator</th>
+                                    <th>Description</th>
+                                    <th>Example</th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>is</td>
+                                        <td>Returns True if both variables are the same object</td>
+                                        <td><code>x is y</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td>is not</td>
+                                        <td>Returns True if both variables are not the same object</td>
+                                        <td><code>x is not y</code></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <br /><hr class="short-line" /><br />
+
+                    <div class="row">
+                        <div class="col-12">
+                            <h1>Python <span>Membership</span> Operators</h1>
+                            <p>Membership operators are used to test if a sequence is presented in an object:</p>
+                            <table class="table table-borderless table-striped table-responsive code-table">
+                                <thead>
+                                    <th>Operator</th>
+                                    <th>Description</th>
+                                    <th>Example</th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>in</td>
+                                        <td>Returns True if a sequence with the specified value is present in the object</td>
+                                        <td><code>x in y</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td>not in</td>
+                                        <td>Returns True if a sequence with the specified value is not present in the object</td>
+                                        <td><code>x not in y</code></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <br /><hr class="short-line" /><br />
+                    
+                    <div class="row">
+                        <div class="col-12">
+                            <h1>Python <span>Bitwise</span> Operators</h1>
+                            <p>Bitwise operators are used to compare (binary) numbers:</p>
+                            <table class="table table-borderless table-striped table-responsive code-table">
+                                <thead>
+                                    <th>Operator</th>
+                                    <th>Name</th>
+                                    <th>Description</th>
+                                    <th>Example</th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>&</td>
+                                        <td>AND</td>
+                                        <td>Sets each bit to 1 if both bits are 1</td>
+                                        <td><code>x & y</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td>|</td>
+                                        <td>OR</td>
+                                        <td>Sets each bit to 1 if one of two bits is 1</td>
+                                        <td><code>x | y</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td>^</td>
+                                        <td>XOR</td>
+                                        <td>Sets each bit to 1 if only one of two bits is 1</td>
+                                        <td><code>x ^ y</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td>~</td>
+                                        <td>NOT</td>
+                                        <td>Inverts all the bits</td>
+                                        <td><code>~x</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><<</td>
+                                        <td>Zero fill left shift</td>
+                                        <td>Shift left by pushing zeros in from the right and let the leftmost bits fall off</td>
+                                        <td><code>x << 2</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td>>></td>
+                                        <td>Signed right shift</td>
+                                        <td>Shift right by pushing copies of the leftmost bit in from the left, and let the rightmost bits fall off</td>
+                                        <td><code>x >> 2</code></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <br /><hr class="short-line" /><br />
+
+                    <div class="row">
+                        <div class="col-12">
+                            <h1>Operator Precedence</h1>
+                            <p>Operator precedence describes the order in which operations are performed.</p>
+                            <div class="code-block-container">
+                                <h3>Example</h3>
+                                <p>Parentheses has the highest precedence, meaning that expressions inside parentheses must be evaluated first:</p>
+                                <div class="code-block">
+                                    <code>print((6 + 3) - (6 + 3))</code>
+                                </div>
+                            </div>
+                            <div class="code-block-container">
+                                <h3>Example</h3>
+                                <p>Multiplication * has higher precedence than addition +, and therefor multiplications are evaluated before additions:</p>
+                                <div class="code-block">
+                                    <code>print(100 + 5 * 3)</code>
+                                </div>
+                            </div>
+                            <p>The precedence order is described in the table below, starting with the highest precedence at the top:</p>
+                            <table class="table table-borderless table-striped table-responsive code-table">
+                                <thead>
+                                    <th>Operator</th>
+                                    <th>Description</th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>()</code></td>
+                                        <td>Parentheses</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>**</code></td>
+                                        <td>Exponentiation</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>+x</code> <code>-x</code> <code>~x</code></td>
+                                        <td>Unary plus, unary minus, and bitwise NOT</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>*</code> <code>/</code> <code>//</code> <code>%</code></td>
+                                        <td>Multiplication, division, floor division, and modulus</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>+</code> <code>-</code></td>
+                                        <td>Addition and subtraction</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code><<</code> <code>>></code></td>
+                                        <td>Bitwise left and right shifts</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>&</code></td>
+                                        <td>Bitwise AND</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>^</code></td>
+                                        <td>Bitwise XOR</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>|</code></td>
+                                        <td>Bitwise OR</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>==</code> <code>!=</code> <code>></code> <code>>=</code> <code><</code> <code><=</code> <code>is</code> <code>is not</code> <code>in</code> <code>not in</code></td>
+                                        <td>Comparisons, identity, and membership operators</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>not</code></td>
+                                        <td>Logical NOT</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>and</code></td>
+                                        <td>AND</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>or</code></td>
+                                        <td>OR</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p>If two operators have the same precedence, the expression is evaluated from left to right.</p>
+                            <div class="code-block-container">
+                                <h3>Example</h3>
+                                <p>Addition <code>+</code> and subtraction <code>-</code> has the same precedence, and therefor we evaluate the expression from left to right:</p>
+                                <div class="code-block">
+                                    <code>print(5 + 4 - 7 + 3)</code>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Pagination -->
+            <section>
+                <div class="py-5 px-auto">
+                    <nav aria-label="Python Tutorials Nav">
+                        <ul class="pagination pagination-md justify-content-center">
+                            <li class="page-item">
+                                <a class="page-link" href="./tutorials-python-strings.html" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="./tutorials-python-introduction.html">1</a></li>
+                            <li class="page-item"><a class="page-link" href="./tutorials-python-getting-started.html">2</a></li>
+                            <li class="page-item"><a class="page-link" href="./tutorials-python-syntax.html">3</a></li>
+                            <li class="page-item"><a class="page-link" href="./tutorials-python-variables.html">4</a></li>
+                            <li class="page-item"><a class="page-link" href="./tutorials-python-data-types.html">5</a></li>
+                            <li class="page-item"><a class="page-link" href="./tutorials-python-numbers.html">6</a></li>
+                            <li class="page-item"><a class="page-link" href="./tutorials-python-strings.html">7</a></li>
+                            <li class="page-item active"><a class="page-link" href="./tutorials-python-operators.html">8</a></li>
+                            <li class="page-item"><a class="page-link" href="./tutorials-python-if-else.html">9</a></li>
+                            <li class="page-item"><a class="page-link" href="./tutorials-python-while-loop.html">10</a></li>
+                            <li class="page-item"><a class="page-link" href="./tutorials-python-for-loop.html">11</a></li>
+                            <li class="page-item"><a class="page-link" href="./tutorials-python-function.html">12</a></li>
+                            <li class="page-item"><a class="page-link" href="./tutorials-python-quiz.html">13</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="./tutorials-python-if-else.html" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <nassipy-footer></nassipy-footer>
+
+        <!-- JavaScript -->
+        <script src="../../../js/main.js"></script>
+        <script src="../../../components/navbartuts.js"></script>
+        <script src="../../../components/python.js"></script>
+        <script src="../../../components/footer.js"></script>
+    
+    <!-- Owl Carousel JS-->
+    <script src="../../../owl-carousel/owl.carousel.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Tab Display -->
+    <link rel="icon" type="image/png" href="../../../images/icon.png">
+    <title>Tutorials: Python Syntax</title>
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/dfcb8f4a1a.js" crossorigin="anonymous"></script>
+ 
+    <!-- Bootstrap 5.3.0 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../../css/style.css">
+    <link rel="stylesheet" href="../../../css/navbar.css">
+    <link rel="stylesheet" href="../../../css/tutorials.css">
+    <link rel="stylesheet" href="../../../css/footer.css">
+</head>
+<body>
+    <header id="custom-navbar2">
+        <nassipy-tutorials-navbar></nassipy-tutorials-navbar>
+    </header>
+
+    <main id="tutorials">
+        <div class="container-fluid w-100 px-0">
+            <div class="container py-5">
+                <h1 class="title">Python Syntax</h1>
+            </div>
+
+            <section id="python-section">
+                <div class="col container">
+                    <div class="row">
+                        <div class="col-12">
+                            <h1>Execute <span>Python Syntax</span></h1>
+                            <p>As we learned in the previous page, Python syntax can be executed by writing directly in the Command Line:</p>
+                            <div class="code-block-container">
+                                <div class="code-block">
+                                    <code>>>> print("Hello, World!")</code>
+                                    <code>Hello, World!</code>
+                                </div>
+                            </div>
+                            <p>Or by creating a python file on the server, using the .py file extension, and running it in the Command Line:</p>
+                            <div class="code-block-container">
+                                <div class="code-block">
+                                    <code>C:\Users\Your Name>python myfile.py</code>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br /><hr class="short-line" /><br />
+
+                    <div class="row">
+                        <div class="col-12">
+                            <h1>Python <span>Indentation</span></h1>
+                            <p>Indentation refers to the spaces at the beginning of a code line.</p>
+                            <p>Where in other programming languages the indentation in code is for readability only, the indentation in Python is very important.</p>
+                            <p>Python uses indentation to indicate a block of code.</p>
+                            <div class="code-block-container">
+                                <h3>Example</h3>
+                                <div class="code-block">
+                                    <code>if 5 > 2:</code>
+                                    <code>  print("Five is greater than two!")</code>
+                                </div>
+                            </div>
+                            <p>Python will give you an error if you skip the indentation:</p>
+                            <div class="code-block-container-error">
+                                <h3>Example</h3>
+                                <p>Syntax Error:</p>
+                                <div class="code-block">
+                                    <code>if 5 > 2:</code>
+                                    <code>print("Five is greater than two!")</code>
+                                </div>
+                            </div>
+                            <p>The number of spaces is up to you as a programmer, the most common use is four, but it has to be at least one.</p>
+                            <div class="code-block-container">
+                                <h3>Example</h3>
+                                <div class="code-block">
+                                    <code>if 5 > 2:</code>
+                                    <code>  print("Five is greater than two!")</code>
+                                    <code>if 5 > 2:</code>
+                                    <code>          print("Five is greater than two!")</code>
+                                </div>
+                            </div>
+                            <p>You have to use the same number of spaces in the same block of code, otherwise Python will give you an error:</p>
+                            <div class="code-block-container-error">
+                                <h3>Example</h3>
+                                <p>Syntax Error:</p>
+                                <div class="code-block">
+                                    <code>if 5 > 2:</code>
+                                    <code>  print("Five is greater than two!")</code>
+                                    <code>          print("Five is greater than two!")</code>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br /><hr class="short-line" /><br />
+
+                    <div class="row">
+                        <div class="col-12">
+                            <h1>Python <span>Variables</span></h1>
+                            <p>In Python, variables are created when you assign a value to it:</p>
+                            <div class="code-block-container">
+                                <h3>Example</h3>
+                                <p>Variables in Python:</p>
+                                <div class="code-block">
+                                    <code>x = 5</code>
+                                    <code>y = "Hello, World!"</code>
+                                </div>
+                            </div>
+                            <p>Python has no command for declaring a variable.</p>
+                            <p>You will learn more about variables in the Python Variables chapter.</p>
+                            <a href="./tutorials-python-variables.html">Learn more <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Pagination -->
+            <section>
+                <div class="py-5 px-auto">
+                    <nav aria-label="Python Tutorials Nav">
+                        <ul class="pagination pagination-md justify-content-center">
+                            <li class="page-item">
+                                <a class="page-link" href="./tutorials-python-introduction.html" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="./tutorials-python-introduction.html">1</a></li>
+                            <li class="page-item"><a class="page-link" href="./tutorials-python-getting-started.html">2</a></li>
+                            <li class="page-item active"><a class="page-link" href="./tutorials-python-syntax.html">3</a></li>
+                            <li class="page-item"><a class="page-link" href="./tutorials-python-variables.html">4</a></li>
+                            <li class="page-item"><a class="page-link" href="./tutorials-python-data-types.html">5</a></li>
+                            <li class="page-item"><a class="page-link" href="./tutorials-python-numbers.html">6</a></li>
+                            <li class="page-item"><a class="page-link" href="./tutorials-python-strings.html">7</a></li>
+                            <li class="page-item"><a class="page-link" href="./tutorials-python-operators.html">8</a></li>
+                            <li class="page-item"><a class="page-link" href="./tutorials-python-if-else.html">9</a></li>
+                            <li class="page-item"><a class="page-link" href="./tutorials-python-while-loop.html">10</a></li>
+                            <li class="page-item"><a class="page-link" href="./tutorials-python-for-loop.html">11</a></li>
+                            <li class="page-item"><a class="page-link" href="./tutorials-python-function.html">12</a></li>
+                            <li class="page-item"><a class="page-link" href="./tutorials-python-quiz.html">13</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="./tutorials-python-variables.html" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <nassipy-footer></nassipy-footer>
+    <!-- JavaScript -->
+    <script src="../../../js/main.js"></script>
+    <script src="../../../components/navbartuts.js"></script>
+    <script src="../../../components/python.js"></script>
+    <script src="../../../components/footer.js"></script>
+    
+    <!-- Owl Carousel JS-->
+    <script src="../../../owl-carousel/owl.carousel.min.js"></script>
+</body>
+</html>

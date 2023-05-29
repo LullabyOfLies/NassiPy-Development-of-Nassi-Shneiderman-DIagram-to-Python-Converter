@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Tab Display -->
+    <link rel="icon" type="image/png" href="../../../images/icon.png">
+    <title>Tutorials: Python For Loops</title>
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/dfcb8f4a1a.js" crossorigin="anonymous"></script>
+ 
+    <!-- Bootstrap 5.3.0 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../../css/style.css">
+    <link rel="stylesheet" href="../../../css/navbar.css">
+    <link rel="stylesheet" href="../../../css/tutorials.css">
+    <link rel="stylesheet" href="../../../css/footer.css">
+</head>
+<body>
+    <header id="custom-navbar2">
+        <nassipy-tutorials-navbar></nassipy-tutorials-navbar>
+    </header>
+
+    <main id="tutorials">
+        <div class="container-fluid w-100 px-0">
+            <div class="container py-5">
+                <h1 class="title">Python For Loops</h1>
+            </div>
+
+            <section id="python-section">
+                <div class="col container">
+                    <div class="row">
+                        <div class="col-12">
+                            <h1>Python <span>For</span> Loops</h1>
+                            <p>A <code>for</code> loop is used for iterating over a sequence (that is either a list, a tuple, a dictionary, a set, or a string).</p>
+                            <p>This is less like the <code>for</code> keyword in other programming languages, and works more like an iterator method as found in other object-orientated programming languages.</p>
+                            <p>With the <code>for</code> loop we can execute a set of statements, once for each item in a list, tuple, set etc.</p>
+                            <div class="code-block-container">
+                                <h3>Example</h3>
+                                <p>Print each fruit in a fruit list:</p>
+                                <div class="code-block">
+                                    <code>fruits = ["apple", "banana", "cherry"]</code>
+                                    <code>for x in fruits:</code>
+                                    <code>  print(x)</code>
+                                </div>
+                            </div>
+                            <p>The <code>for</code> loop does not require an indexing variable to set beforehand.</p>
+                        </div>
+                    </div>
+
+                    <br /><hr class="short-line" /><br />
+
+                    <div class="row">
+                        <div class="col-12">
+                            <h1><span>Looping Through</span> a String</h1>
+                            <p>Even strings are iterable objects, they contain a sequence of characters:</p>
+                            <div class="code-block-container">
+                                <p>Exit the loop when i is 3:</p>
+                                <h3>Loop through the letters in the word "banana":</h3>
+                                <div class="code-block">
+                                    <code>for x in "banana":</code>
+                                    <code>  print(x)</code>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <br /><hr class="short-line" /><br />
+
+                    <div class="row">
+                        <div class="col-12">
+                            <h1>The <span>break</span> Statement</h1>
+                            <p>With the <code>break</code> statement we can stop the loop before it has looped through all the items:</p>
+                            <div class="code-block-container">
+                                <h3>Example</h3>
+                                <p>Exit the loop when <code>x</code> is "banana":</p>
+                                <div class="code-block">
+                                    <code>fruits = ["apple", "banana", "cherry"]</code>
+                                    <code>for x in fruits:</code>
+                                    <code>  print(x)</code>
+                                    <code>  if x == "banana":</code>
+                                    <code>    break</code>
+                                </div>
+                            </div>
+                            <div class="code-block-container">
+                                <h3>Example</h3>
+                                <p>Exit the loop when <code>x</code> is "banana", but this time the break comes before the print:</p>
+                                <div class="code-block">
+                                    <code>fruits = ["apple", "banana", "cherry"]</code>
+                                    <code>for x in fruits:</code>
+                                    <code>  if x == "banana":</code>
+                                    <code>    break</code>
+                                    <code>  print(x)</code>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br /><hr class="short-line" /><br />
+
+                    <div class="row">
+                        <div class="col-12">
+                            <h1>The <span>continue</span> Statement</h1>
+                            <p>With the <code>continue</code> statement we can stop the current iteration of the loop, and continue with the next:</p>
+                            <div class="code-block-container">
+                                <h3>Example</h3>
+                                <p>Do not print banana:</p>
+                                <div class="code-block">
+                                    <code>fruits = ["apple", "banana", "cherry"]</code>
+                                    <code>for x in fruits:</code>
+                                    <code>  if x == "banana":</code>
+                                    <code>    continue</code>
+                                    <code>  print(x)</code>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br /><hr class="short-line" /><br />
+
+                    <div class="row">
+                        <div class="col-12">
+                            <h1>The <span>range()</span> Statement</h1>
+                            <p>To loop through a set of code a specified number of times, we can use the <code>range()</code> function.</p>
+                            <p>The <code>range()</code> function returns a sequence of numbers, starting from 0 by default, and increments by 1 (by default), and ends at a specified number.</p>
+                            <div class="code-block-container">
+                                <h3>Example</h3>
+                                <p>Using the range() function:</p>
+                                <div class="code-block">
+                                    <code>for x in range(6):</code>
+                                    <code>  print(x)</code>
+                                </div>
+                            </div>
+                            <p>Note that <code>range(6)</code> is not the values of 0 to 6, but the values 0 to 5.</p>
+                            <p>The <code>range()</code> function defaults to 0 as a starting value, however it is possible to specify the starting value by adding a parameter: <code>range(2, 6)</code>, which means values from 2 to 6 (but not including 6):</p>
+                            <div class="code-block-container">
+                                <h3>Example</h3>
+                                <p>Using the start parameter:</p>
+                                <div class="code-block">
+                                    <code>for x in range(2, 6):</code>
+                                    <code>  print(x)</code>
+                                </div>
+                            </div>
+                            <p>The <code>range()</code> function defaults to increment the sequence by 1, however it is possible to specify the increment value by adding a third parameter: <code>range(2, 30, 3)</code>:</p>
+                            <div class="code-block-container">
+                                <h3>Example</h3>
+                                <p>Increment the sequence with 3 (default is 1):</p>
+                                <div class="code-block">
+                                    <code>for x in range(2, 30, 3):</code>
+                                    <code>  print(x)</code>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br /><hr class="short-line" /><br />
+
+                    <div class="row">
+                        <div class="col-12">
+                            <h1><span>Else</span> in For Loop</h1>
+                            <p>The <code>else</code> keyword in a <code>for</code> loop specifies a block of code to be executed when the loop is finished:</p>
+                            <div class="code-block-container">
+                                <h3>Example</h3>
+                                <p>Print all numbers from 0 to 5, and print a message when the loop has ended:</p>
+                                <div class="code-block">
+                                    <code>for x in range(6):</code>
+                                    <code>  print(x)</code>
+                                    <code>else:</code>
+                                    <code>  print("Finally finished!")</code>
+                                </div>
+                            </div>
+                            <p>Note: The <code>else</code> block will NOT be executed if the loop is stopped by a <code>else</code> statement.</p>
+                            <div class="code-block-container">
+                                <h3>Example</h3>
+                                <p>Break the loop when <code>x</code> is 3, and see what happens with the <code>else</code> block:</p>
+                                <div class="code-block">
+                                    <code>for x in range(6):</code>
+                                    <code>  if x == 3: break</code>
+                                    <code>  print(x)</code>
+                                    <code>else:</code>
+                                    <code>  print("Finally finished!")</code>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br /><hr class="short-line" /><br />
+
+                    <div class="row">
+                        <div class="col-12">
+                            <h1><span>Nested</span> Loops</h1>
+                            <p>A nested loop is a loop inside a loop.</p>
+                            <p>The "inner loop" will be executed one time for each iteration of the "outer loop":</p>
+                            <div class="code-block-container">
+                                <h3>Example</h3>
+                                <p>Print each adjective for every fruit:</p>
+                                <div class="code-block">
+                                    <code>adj = ["red", "big", "tasty"]</code>
+                                    <code>fruits = ["apple", "banana", "cherry"]</code>
+                                    <code><br /></code>
+                                    <code>for x in adj:</code>
+                                    <code>  for y in fruits:</code>
+                                    <code>    print(x, y)</code>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br /><hr class="short-line" /><br />
+
+                    <div class="row">
+                        <div class="col-12">
+                            <h1>The <span>pass</span> Statement</h1>
+                            <p><code>for</code> loops cannot be empty, but if you for some reason have a <code>for</code> loop with no content, put in the <code>pass</code> statement to avoid getting an error.</p>
+                            <div class="code-block-container">
+                                <h3>Example</h3>
+                                <p>Print each adjective for every fruit:</p>
+                                <div class="code-block">
+                                    <code>for x in [0, 1, 2]:</code>
+                                    <code>  pass</code>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Pagination -->
+            <section>
+                <div class="py-5 px-auto">
+                    <nav aria-label="Python Tutorials Nav">
+                        <ul class="pagination pagination-md justify-content-center">
+                            <li class="page-item">
+                                <a class="page-link" href="./tutorials-python-while-loop.html" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="./tutorials-python-introduction.html">1</a></li>
+                            <li class="page-item"><a class="page-link" href="./tutorials-python-getting-started.html">2</a></li>
+                            <li class="page-item"><a class="page-link" href="./tutorials-python-syntax.html">3</a></li>
+                            <li class="page-item"><a class="page-link" href="./tutorials-python-variables.html">4</a></li>
+                            <li class="page-item"><a class="page-link" href="./tutorials-python-data-types.html">5</a></li>
+                            <li class="page-item"><a class="page-link" href="./tutorials-python-numbers.html">6</a></li>
+                            <li class="page-item"><a class="page-link" href="./tutorials-python-strings.html">7</a></li>
+                            <li class="page-item"><a class="page-link" href="./tutorials-python-operators.html">8</a></li>
+                            <li class="page-item"><a class="page-link" href="./tutorials-python-if-else.html">9</a></li>
+                            <li class="page-item"><a class="page-link" href="./tutorials-python-while-loop.html">10</a></li>
+                            <li class="page-item active"><a class="page-link" href="./tutorials-python-for-loop.html">11</a></li>
+                            <li class="page-item"><a class="page-link" href="./tutorials-python-function.html">12</a></li>
+                            <li class="page-item"><a class="page-link" href="./tutorials-python-quiz.html">13</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="./tutorials-python-function.html" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <nassipy-footer></nassipy-footer>
+
+    <!-- JavaScript -->
+    <script src="../../../js/main.js"></script>
+    <script src="../../../components/navbartuts.js"></script>
+    <script src="../../../components/python.js"></script>
+    <script src="../../../components/footer.js"></script>
+    
+    <!-- Owl Carousel JS-->
+    <script src="../../../owl-carousel/owl.carousel.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Tab Display -->
+    <link rel="icon" type="image/png" href="../../../images/icon.png">
+    <title>Tutorials: Python If... Else</title>
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/dfcb8f4a1a.js" crossorigin="anonymous"></script>
+ 
+    <!-- Bootstrap 5.3.0 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../../css/style.css">
+    <link rel="stylesheet" href="../../../css/navbar.css">
+    <link rel="stylesheet" href="../../../css/tutorials.css">
+    <link rel="stylesheet" href="../../../css/footer.css">
+</head>
+<body>
+    <header id="custom-navbar2">
+        <nassipy-tutorials-navbar></nassipy-tutorials-navbar>
+    </header>
+
+    <main id="tutorials">
+        <div class="container-fluid w-100 px-0">
+            <div class="container py-5">
+                <h1 class="title">Python If ... Else</h1>
+            </div>
+
+            <section id="python-section">
+                <div class="col container">
+                    <div class="row">
+                        <div class="col-12">
+                            <h1>Python Conditions and <span>If Statements</span></h1>
+                            <p>Python supports the usual logical conditions from mathematics:</p>
+                            <ul>
+                                <li>Equals: <code>a == b</code></li>
+                                <li>Not Equals: <code>a != b</code></li>
+                                <li>Less than: <code>a < b</code></li>
+                                <li>Less than or equal to: <code>a <= b</code></li>
+                                <li>Greater than: <code>a > b</code></li>
+                                <li>Greater than or equal to: <code>a >= b</code></li>
+                            </ul>
+                            <p>These conditions can be used in several ways, most commonly in "if statements" and loops.</p>
+                            <p>An "if statement" is written by using the <code>if</code> keyword.</p>
+                            <div class="code-block-container">
+                                <h3>Example</h3>
+                                <p>If statement:</p>
+                                <div class="code-block">
+                                    <code>a = 33</code>
+                                    <code>b = 200</code>
+                                    <code>if b > a:</code>
+                                    <code>  print("b is greater than a")</code>
+                                </div>
+                            </div>
+                            <p>
+                                In this example we use two variables, <code>a</code> and <code>b</code>, which are used as part of the if statement to test whether <code>b</code> is greater than <code>a</code>.
+                                As <code>a</code> is <code>33</code>, and <code>b</code> is <code>200</code>, we know that 200 is greater than 33, and so we print to screen that "b is greater than a".
+                            </p>
+                        </div>
+                    </div>
+
+                    <br /><hr class="short-line" /><br />
+
+                    <div class="row">
+                        <div class="col-12">
+                            <h1>Indentation</h1>
+                            <p>Python relies on indentation (whitespace at the beginning of a line) to define scope in the code. Other programming languages often use curly-brackets for this purpose.</p>
+                            <div class="code-block-container-error">
+                                <h3>Example</h3>
+                                <p>If statement, without indentation (will raise an error):</p>
+                                <div class="code-block">
+                                    <code>a = 33</code>
+                                    <code>b = 200</code>
+                                    <code>if b > a:</code>
+                                    <code>print("b is greater than a")</code>
+                                </div>
+                            </div>
+                            <p>
+                                In this example we use two variables, <code>a</code> and <code>b</code>, which are used as part of the if statement to test whether <code>b</code> is greater than <code>a</code>.
+                                As <code>a</code> is <code>33</code>, and <code>b</code> is <code>200</code>, we know that 200 is greater than 33, and so we print to screen that "b is greater than a".
+                            </p>
+                        </div>
+                    </div>
+
+                    <br /><hr class="short-line"> /><br />
+
+                    <div class="row">
+                        <div class="col-12">
+                            <h1>Indentation</h1>
+                            <p>Python relies on indentation (whitespace at the beginning of a line) to define scope in the code. Other programming languages often use curly-brackets for this purpose.</p>
+                            <div class="code-block-container-error">
+                                <h3>Example</h3>
+                                <p>If statement, without indentation (will raise an error):</p>
+                                <div class="code-block">
+                                    <code>a = 33</code>
+                                    <code>b = 200</code>
+                                    <code>if b > a:</code>
+                                    <code>print("b is greater than a")</code>
+                                </div>
+                            </div>
+                            <p>
+                                In this example we use two variables, <code>a</code> and <code>b</code>, which are used as part of the if statement to test whether <code>b</code> is greater than <code>a</code>.
+                                As <code>a</code> is <code>33</code>, and <code>b</code> is <code>200</code>, we know that 200 is greater than 33, and so we print to screen that "b is greater than a".
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <br /><hr class="short-line"> /><br />
+
+                    <div class="row">
+                        <div class="col-12">
+                            <h1>Elif</h1>
+                            <p>The <code>elif</code> keyword is Python's way of saying "if the previous conditions were not true, then try this condition".</p>
+                            <div class="code-block-container">
+                                <h3>Example</h3>
+                                <div class="code-block">
+                                    <code>a = 33</code>
+                                    <code>b = 33</code>
+                                    <code>if b > a:</code>
+                                    <code>  print("b is greater than a")</code>
+                                    <code>elif a == b:</code>
+                                    <code>  print("a and b are equal")</code>
+                                </div>
+                            </div>
+                            <p>In this example <code>a</code> is equal to <code>b</code>, so the first condition is not true, but the <code>elif</code> condition is true, so we print to screen that "a and b are equal".</p>
+                        </div>
+                    </div>
+                    
+                    <br /><hr class="short-line"> /><br />
+
+                    <div class="row">
+                        <div class="col-12">
+                            <h1>Else</h1>
+                            <p>The <code>else</code> keyword catches anything which isn't caught by the preceding conditions.</p>
+                            <div class="code-block-container">
+                                <h3>Example</h3>
+                                <div class="code-block">
+                                    <code>a = 33</code>
+                                    <code>b = 33</code>
+                                    <code>if b > a:</code>
+                                    <code>  print("b is greater than a")</code>
+                                    <code>elif a == b:</code>
+                                    <code>  print("a and b are equal")</code>
+                                    <code>else:</code>
+                                    <code>  print("a is greater than b")</code>
+                                </div>
+                            </div>
+                            <p>In this example <code>a</code> is greater than <code>b</code>, so the first condition is not true, also the <code>elif</code> condition is not true, so we go to the <code>else</code> condition and print to screen that "a is greater than b".</p>
+                            <p>You can also have an <code>else</code> without the <code>elif</code>:</p>
+                            <div class="code-block-container">
+                                <h3>Example</h3>
+                                <div class="code-block">
+                                    <code>a = 33</code>
+                                    <code>b = 33</code>
+                                    <code>if b > a:</code>
+                                    <code>  print("b is greater than a")</code>
+                                    <code>else:</code>
+                                    <code>  print("b is not greater than a")</code>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br /><hr class="short-line"> /><br />
+
+                    <div class="row">
+                        <div class="col-12">
+                            <h1><span>Short Hand</span> If</h1>
+                            <p>If you have only one statement to execute, you can put it on the same line as the if statement.</p>
+                            <div class="code-block-container">
+                                <h3>Example</h3>
+                                <p>One line if statement:</p>
+                                <div class="code-block">
+                                    <code>if a > b: print("a is greater than b")</code>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <br /><hr class="short-line"> /><br />
+
+                    <div class="row">
+                        <div class="col-12">
+                            <h1><span>Short Hand</span> If ... Else</h1>
+                            <p>If you have only one statement to execute, one for if, and one for else, you can put it all on the same line:</p>
+                            <div class="code-block-container">
+                                <h3>Example</h3>
+                                <p>One line if statement:</p>
+                                <div class="code-block">
+                                    <code>a = 2</code>
+                                    <code>b = 330</code>
+                                    <code>print("A") if a > b else print("B")</code>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <br /><hr class="short-line"> /><br />
+
+                    <div class="row">
+                        <div class="col-12">
+                            <h1><span>Short Hand</span> If ... Else</h1>
+                            <p>If you have only one statement to execute, one for if, and one for else, you can put it all on the same line:</p>
+                            <div class="code-block-container">
+                                <h3>Example</h3>
+                                <p>One line if statement:</p>
+                                <div class="code-block">
+                                    <code>a = 2</code>
+                                    <code>b = 330</code>
+                                    <code>print("A") if a > b else print("B")</code>
+                                </div>
+                            </div>
+                            <p>This technique is known as <code>Ternary Operators</code>, or <code>Conditional Expressions</code>.</p>
+                            <p>You can also have multiple else statements on the same line:</p>
+                            <div class="code-block-container">
+                                <h3>Example</h3>
+                                <p>One line if statement:</p>
+                                <div class="code-block">
+                                    <code>a = 2</code>
+                                    <code>b = 330</code>
+                                    <code>print("A") if a > b else print("=") if a == b else print("B")</code>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br /><hr class="short-line"> /><br />
+
+                    <div class="row">
+                        <div class="col-12">
+                            <h1>And</h1>
+                            <p>The <code>and</code> keyword is a logical operator, and is used to combine conditional statements:</p>
+                            <div class="code-block-container">
+                                <h3>Example</h3>
+                                <p>Test if <code>a</code> is greater than <code>b</code>, AND if <code>c</code> is greater than <code>a</code>:</p>
+                                <div class="code-block">
+                                    <code>a = 200</code>
+                                    <code>b = 33</code>
+                                    <code>c = 500</code>
+                                    <code>if a > b and c > a:</code>
+                                    <code>  print("Both conditions are True")</code>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br /><hr class="short-line"> /><br />
+
+                    <div class="row">
+                        <div class="col-12">
+                            <h1>Or</h1>
+                            <p>The <code>or</code> keyword is a logical operator, and is used to combine conditional statements:</p>
+                            <div class="code-block-container">
+                                <h3>Example</h3>
+                                <p>Test if <code>a</code> is greater than <code>b</code>, OR if <code>c</code> is greater than <code>a</code>:</p>
+                                <div class="code-block">
+                                    <code>a = 200</code>
+                                    <code>b = 33</code>
+                                    <code>c = 500</code>
+                                    <code>if a > b or c > a:</code>
+                                    <code>  print("At least one of the conditions is True")</code>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br /><hr class="short-line"> /><br />
+
+                    <div class="row">
+                        <div class="col-12">
+                            <h1>Not</h1>
+                            <p>The <code>not</code> keyword is a logical operator, and is used to reverse the result of the conditional statement:</p>
+                            <div class="code-block-container">
+                                <h3>Example</h3>
+                                <p>Test if <code>a</code> is NOT greater than <code>b</code>:</p>
+                                <div class="code-block">
+                                    <code>a = 33</code>
+                                    <code>b = 200</code>
+                                    <code>if a > b:</code>
+                                    <code>  print("a is NOT greater than b")</code>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br /><hr class="short-line"> /><br />
+
+                    <div class="row">
+                        <div class="col-12">
+                            <h1>Nested If</h1>
+                            <p>You can have <code>if</code> statements inside <code>if</code> statements, this is called <span class="italicized-p">nested</span> <code>if</code> statements.</p>
+                            <div class="code-block-container">
+                                <h3>Example</h3>
+                                <p>Test if <code>a</code> is NOT greater than <code>b</code>:</p>
+                                <div class="code-block">
+                                    <code>x = 41</code>
+                                    <code><br /></code>
+                                    <code>if x > 10:</code>
+                                    <code>  print("Above ten,")</code>
+                                    <code>  if x > 20:</code>
+                                    <code>    print("and also above 20!")</code>
+                                    <code>  else:</code>
+                                    <code>    print("but not above 20.")</code>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <br /><hr class="short-line"> /><br />
+
+                    <div class="row">
+                        <div class="col-12">
+                            <h1>The <span>pass</span> Statement</h1>
+                            <p><code>if</code> statements cannot be empty, but if you for some reason have an <code>if</code> statement with no content, put in the <code>pass</code> statement to avoid getting an error.</p>
+                            <div class="code-block-container">
+                                <h3>Example</h3>
+                                <p>Test if <code>a</code> is NOT greater than <code>b</code>:</p>
+                                <div class="code-block">
+                                    <code>a = 33</code>
+                                    <code>b = 200</code>
+                                    <code><br /></code>
+                                    <code>if b > a:</code>
+                                    <code>  pass</code>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Pagination -->
+            <section>
+                <div class="py-5 px-auto">
+                    <nav aria-label="Python Tutorials Nav">
+                        <ul class="pagination pagination-md justify-content-center">
+                            <li class="page-item">
+                                <a class="page-link" href="./tutorials-python-operators.html" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="./tutorials-python-introduction.html">1</a></li>
+                            <li class="page-item"><a class="page-link" href="./tutorials-python-getting-started.html">2</a></li>
+                            <li class="page-item"><a class="page-link" href="./tutorials-python-syntax.html">3</a></li>
+                            <li class="page-item"><a class="page-link" href="./tutorials-python-variables.html">4</a></li>
+                            <li class="page-item"><a class="page-link" href="./tutorials-python-data-types.html">5</a></li>
+                            <li class="page-item"><a class="page-link" href="./tutorials-python-numbers.html">6</a></li>
+                            <li class="page-item"><a class="page-link" href="./tutorials-python-strings.html">7</a></li>
+                            <li class="page-item"><a class="page-link" href="./tutorials-python-operators.html">8</a></li>
+                            <li class="page-item active"><a class="page-link" href="./tutorials-python-if-else.html">9</a></li>
+                            <li class="page-item"><a class="page-link" href="./tutorials-python-while-loop.html">10</a></li>
+                            <li class="page-item"><a class="page-link" href="./tutorials-python-for-loop.html">11</a></li>
+                            <li class="page-item"><a class="page-link" href="./tutorials-python-function.html">12</a></li>
+                            <li class="page-item"><a class="page-link" href="./tutorials-python-quiz.html">13</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="./tutorials-python-while-loop.html" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <nassipy-footer></nassipy-footer>
+
+    <!-- JavaScript -->
+    <script src="../../../js/main.js"></script>
+    <script src="../../../components/navbartuts.js"></script>
+    <script src="../../../components/python.js"></script>
+    <script src="../../../components/footer.js"></script>
+    
+    <!-- Owl Carousel JS-->
+    <script src="../../../owl-carousel/owl.carousel.min.js"></script>
+</body>
+</html>

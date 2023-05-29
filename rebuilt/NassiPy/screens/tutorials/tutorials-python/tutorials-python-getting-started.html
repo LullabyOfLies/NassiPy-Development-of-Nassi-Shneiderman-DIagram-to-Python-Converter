@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Tab Display -->
+    <link rel="icon" type="image/png" href="../../../images/icon.png">
+    <title>Tutorials: Python Getting Started</title>
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/dfcb8f4a1a.js" crossorigin="anonymous"></script>
+ 
+    <!-- Bootstrap 5.3.0 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../../css/style.css">
+    <link rel="stylesheet" href="../../../css/navbar.css">
+    <link rel="stylesheet" href="../../../css/tutorials.css">
+    <link rel="stylesheet" href="../../../css/footer.css">
+</head>
+<body>
+    <header id="custom-navbar2">
+        <nassipy-tutorials-navbar></nassipy-tutorials-navbar>
+    </header>
+
+    <main id="tutorials">
+        <div class="container-fluid w-100 px-0">
+            <div class="container py-5">
+                <h1 class="title">Python Getting Started</h1>
+            </div>
+
+            <!-- Python Install -->
+            <section id="python-section">
+                <div class="col container">
+                    <div class="row">
+                        <div class="col-12">
+                            <h1>Python <span>Install</span></h1>
+                            <p>
+                                Many PCs and Macs will have python already installed.
+                            </p>
+                            <p>
+                                To check if you have python installed on a Windows PC, search in the start bar for Python or run the following on the Command Line (cmd.exe):
+                            </p>
+                            <div class="code-block-container">
+                                <div class="code-block">
+                                    <code>C:\Users\Your Name>python --version</code>
+                                </div>
+                            </div>
+                            <p>
+                                To check if you have python installed on a Linux or Mac, then on linux open the command line or on Mac open the Terminal and type:
+                            </p>
+                            <div class="code-block-container">
+                                <div class="code-block">
+                                    <code>python --version</code>
+                                </div>
+                            </div>
+                            <p>
+                                If you find that you do not have Python installed on your computer, then you can download it for free from their website:
+                            </p><br />
+                            <a href="https://www.python.org/" target="_blank" rel="noopener">Python Official Website <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+
+                    <br /><hr class="short-line" /><br />
+
+                    <div class="row">
+                        <div class="col-12">
+                            <h1>Python <span>Quickstart</span></h1>
+                            <p>
+                                Python is an interpreted programming language, this means that as a developer you write Python (.py) files in a text editor and then put those files into the python interpreter to be executed.
+                            </p>
+                            <p>
+                                The way to run a python file is like this on the command line:
+                            </p>
+                            <div class="code-block-container">
+                                <div class="code-block">
+                                    <code>C:\Users\Your Name>python helloworld.py</code>
+                                </div>
+                            </div>
+                            <p>
+                                Where "helloworld.py" is the name of your python file.
+                            </p>
+                            <p>
+                                Let's write our first Python file, called helloworld.py, which can be done in any text editor.
+                            </p>
+                            <div class="code-block-container">
+                                <p>helloworld.py</p>
+                                <div class="code-block">
+                                    <code>print("Hello, World!")</code>   
+                                </div>
+                            </div>
+                            <p>
+                                Simple as that. Save your file. Open your command line, navigate to the directory where you saved your file, and run:
+                            </p>
+                            <div class="code-block-container">
+                                <div class="code-block">
+                                    <code>C:\Users\Your Name>python helloworld.py</code>   
+                                </div>
+                            </div>
+                            <p>
+                                The output should read:
+                            </p>
+                            <div class="code-block-container">
+                                <div class="code-block">
+                                    <code>Hello, World!</code>   
+                                </div>
+                            </div>
+                            <p>
+                                Congratulations, you have written and executed your first Python program.
+                            </p>
+                        </div>
+                    </div>
+
+                    <br /><hr class="short-line" /><br />
+
+                    <div class="row">
+                        <div class="col-12">
+                            <h1>Python <span>Command Line</span></h1>
+                            <p>
+                                To test a short amount of code in python sometimes it is quickest and easiest not to write the code in a file.
+                                This is made possible because Python can be run as a command line itself.
+                            </p>
+                            <p>
+                                Type the following on the Windows, Mac or Linux command line:
+                            </p>
+                            <div class="code-block-container">
+                                <div class="code-block">
+                                    <code>C:\Users\Your Name>python</code>
+                                </div>
+                            </div>
+                            <p>
+                                Or, if the "python" command did not work, you can try "py":
+                            </p>
+                            <div class="code-block-container">
+                                <div class="code-block">
+                                    <code>C:\Users\Your Name>py</code>
+                                </div>
+                            </div>
+                            <p>
+                                From there you can write any python, including our hello world example from earlier in the tutorial:
+                            </p>
+                            <div class="code-block-container">
+                                <div class="code-block">
+                                    <code class="inactive-code">C:\Users\Your Name>python</code>
+                                    <code class="inactive-code">Python 3.6.4 (v3.6.4:d48eceb, Dec 19 2017, 06:04:45) [MSC v.1900 32 bit (Intel)] on win32</code>
+                                    <code class="inactive-code">Type "help", "copyright", "credits" or "license" for more information.</code>
+                                    <code>>>> print("Hello, World!")</code>
+                                </div>
+                            </div>
+                            <p>
+                                Which will write "Hello, World!" in the command line:
+                            </p>
+                            <div class="code-block-container">
+                                <div class="code-block">
+                                    <code class="inactive-code">C:\Users\Your Name>python</code>
+                                    <code class="inactive-code">Python 3.6.4 (v3.6.4:d48eceb, Dec 19 2017, 06:04:45) [MSC v.1900 32 bit (Intel)] on win32</code>
+                                    <code class="inactive-code">Type "help", "copyright", "credits" or "license" for more information.</code>
+                                    <code class="inactive-code">>>> print("Hello, World!")</code>
+                                    <code>Hello, World!</code>
+                                </div>
+                            </div>
+                            <p>
+                                Whenever you are done in the python command line, you can simply type the following to quit the python command line interface:
+                            </p>
+                            <div class="code-block-container">
+                                <div class="code-block">
+                                    <code>exit()</code>   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Pagination -->
+            <section>
+                <div class="py-5 px-auto">
+                    <nav aria-label="Python Tutorials Nav">
+                        <ul class="pagination pagination-md justify-content-center">
+                            <li class="page-item">
+                                <a class="page-link" href="./tutorials-python-introduction.html" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="./tutorials-python-introduction.html">1</a></li>
+                            <li class="page-item active"><a class="page-link" href="./tutorials-python-getting-started.html">2</a></li>
+                            <li class="page-item"><a class="page-link" href="./tutorials-python-syntax.html">3</a></li>
+                            <li class="page-item"><a class="page-link" href="./tutorials-python-variables.html">4</a></li>
+                            <li class="page-item"><a class="page-link" href="./tutorials-python-data-types.html">5</a></li>
+                            <li class="page-item"><a class="page-link" href="./tutorials-python-numbers.html">6</a></li>
+                            <li class="page-item"><a class="page-link" href="./tutorials-python-strings.html">7</a></li>
+                            <li class="page-item"><a class="page-link" href="./tutorials-python-operators.html">8</a></li>
+                            <li class="page-item"><a class="page-link" href="./tutorials-python-if-else.html">9</a></li>
+                            <li class="page-item"><a class="page-link" href="./tutorials-python-while-loop.html">10</a></li>
+                            <li class="page-item"><a class="page-link" href="./tutorials-python-for-loop.html">11</a></li>
+                            <li class="page-item"><a class="page-link" href="./tutorials-python-function.html">12</a></li>
+                            <li class="page-item"><a class="page-link" href="./tutorials-python-quiz.html">13</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="./tutorials-python-syntax.html" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <nassipy-footer></nassipy-footer>
+
+    <!-- JavaScript -->
+    <script src="../../../js/main.js"></script>
+    <script src="../../../components/navbartuts.js"></script>
+    <script src="../../../components/python.js"></script>
+    <script src="../../../components/footer.js"></script>
+    
+    <!-- Owl Carousel JS-->
+    <script src="../../../owl-carousel/owl.carousel.min.js"></script>
+</body>
+</html>
