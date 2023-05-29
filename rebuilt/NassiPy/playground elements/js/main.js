@@ -11,7 +11,7 @@ function scoreValidation() {
     const latestScore = scoreData.score;
 
     // Check if the latest score is less than 15
-    if (latestScore < 15) {
+    if (latestScore < 15 || latestScore === null || latestScore === 0) {
       // Display an alert message with a button linked to "../../quiz.html"
       const alertMessage = `Sorry, your latest Quiz score (${latestScore}) doesn't meet the minimum score to access the playground. Learn more on the tutorials then take the quiz again.`;
       const alertButton = 'Okay';
