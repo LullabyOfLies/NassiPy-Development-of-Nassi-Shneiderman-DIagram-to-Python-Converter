@@ -4,7 +4,7 @@ class Navbar extends HTMLElement{
                <nav class="navbar navbar-expand-lg bg-transparent custom-navbar">
                    <div class="container container-fluid logo">
                        <!-- Website Logo -->
-                       <a class="navbar-brand" href="./index.html">
+                       <a class="navbar-brand" href="../index.html">
                            <img src="../../images/logoorig.png" alt="NassiPy" class="navbar-icon" />
                        </a>
    
