@@ -605,7 +605,7 @@ while (currentNode) {
     
 }else if(previousNode && !(previousNode.value.trim().startsWith("if")) && !(previousNode.value.trim().startsWith("def")) && !(previousNode.value.trim().startsWith("for")) && !(previousNode.value.trim().startsWith("elif")) && !(previousNode.value.trim().startsWith("else")) && currentNode.value.trim().startsWith("return")){
   //kung yung previous node ay print or iba pa pero yung currentNode ay return dapat parehas sila ng level
-  currentNode.level = previousNode.level-1;
+  currentNode.level = previousNode.level;
   // console.log(previousNode.level);  
   // console.log(currentNode.level);
   // console.log(nextNode);
