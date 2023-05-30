@@ -592,7 +592,7 @@ while (currentNode) {
 
  
     
-} else if (!currentNode.value.trim().startsWith("for") && !currentNode.value.trim().startsWith("elif") && !currentNode.value.trim().startsWith("def") && !currentNode.value.trim().startsWith("if") && !currentNode.value.trim().startsWith("else") && !currentNode.value.trim().startsWith("while")) {
+} else if (!currentNode.value.trim().startsWith("for") && !currentNode.value.trim().startsWith("elif") && !currentNode.value.trim().startsWith("def") && !currentNode.value.trim().startsWith("if") && !currentNode.value.trim().startsWith("else") && !currentNode.value.trim().startsWith("while") && !currentNode.value.trim().startsWith("return")) {
   //this code block is to check if the currentNode is a print or any self-initialization 
     if (previousNode.value.trim().startsWith("if") || previousNode.value.trim().startsWith("else") || previousNode.value.trim().startsWith("elif") || previousNode.value.trim().startsWith("for") || previousNode.value.trim().startsWith("def") || previousNode.value.trim().startsWith("while") && currentNode.level >= 2) {
         currentNode.level = previousNode.level + 2;
@@ -603,6 +603,12 @@ while (currentNode) {
         currentNode.level = previousNode.level;
     }
     
+}else if(previousNode && !(previousNode.value.trim().startsWith("if")) && !(previousNode.value.trim().startsWith("def")) && !(previousNode.value.trim().startsWith("for")) && !(previousNode.value.trim().startsWith("elif")) && !(previousNode.value.trim().startsWith("else")) && currentNode.value.trim().startsWith("return")){
+  //kung yung previous node ay print or iba pa pero yung currentNode ay return dapat parehas sila ng level
+  currentNode.level = previousNode.level-1;
+  // console.log(previousNode.level);  
+  // console.log(currentNode.level);
+  // console.log(nextNode);
 }else if(previousNode && !(previousNode.value.trim().startsWith("if")) && !(previousNode.value.trim().startsWith("def")) && !(previousNode.value.trim().startsWith("for")) && !(previousNode.value.trim().startsWith("elif")) && !(previousNode.value.trim().startsWith("else")) && currentNode.value.trim().startsWith("for")){
   //kung yung previous node ay print or iba pa pero yung currentNode ay for dapat parehas sila ng level
   currentNode.level = previousNode.level;
