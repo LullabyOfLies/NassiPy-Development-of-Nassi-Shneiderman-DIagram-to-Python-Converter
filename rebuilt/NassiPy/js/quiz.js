@@ -7,78 +7,78 @@ const quizData = [
         d: 'p("Hello World")',
         correct: "c",
     },
-    // {
-    //     question: "What is the correct syntax to declare a variable in Python?",
-    //     a: "var x",
-    //     b: "x = var",
-    //     c: "x = 5",
-    //     d: "int x = 5",
-    //     correct: "c",
-    // },
-    // {
-    //     question: "Which data type is used to store a single character in Python?",
-    //     a: "char",
-    //     b: "string",
-    //     c: "character",
-    //     d: "charstring",
-    //     correct: "b",
-    // },
-    // {
-    //     question: "What is the result of the following expression: 3 * 2?",
-    //     a: "6",
-    //     b: "5",
-    //     c: "13",
-    //     d: "9",
-    //     correct: "a",
-    // },
-    // {
-    //     question: "Which of the following is a valid Python data type?",
-    //     a: "integer",
-    //     b: "float",
-    //     c: "character",
-    //     d: "boolean",
-    //     correct: "b",
-    // },
-    // {
-    //     question: "What will be the value of x after the following code is executed? x = 10 + 5 * 2",
-    //     a: "20",
-    //     b: "15",
-    //     c: "30",
-    //     d: "25",
-    //     correct: "d",
-    // },
-    // {
-    //     question: "What is the output of the following code? \n numbers = [1, 2, 3, 4, 5] \n total = sum(numbers)\n print(total)",
-    //     a: "1",
-    //     b: "2",
-    //     c: "15",
-    //     d: "5",
-    //     correct: "c",
-    // },
-    // {
-    //     question: "How do you check the length of a string in Python?",
-    //     a: "size()",
-    //     b: "length()",
-    //     c: "count()",
-    //     d: "len()",
-    //     correct: "d",
-    // },
-    // {
-    //     question: "What does the 'elif' keyword represent in Python?",
-    //     a: "A loop control statement",
-    //     b: "An error handling statement",
-    //     c: "An alternative condition in an if-else statement",
-    //     d: "A built-in function in Python",
-    //     correct: "c",
-    // },
-    // {
-    //     question: "Which of the following is the correct syntax for a for loop in Python?",
-    //     a: "for i in range(10):",
-    //     b: "for i = 0; i < 10; i++:",
-    //     c: "for (i = 0; i < 10; i++):",
-    //     d: "for i < 10 in range:",
-    //     correct: "a",
-    // },
+    {
+        question: "What is the correct syntax to declare a variable in Python?",
+        a: "var x",
+        b: "x = var",
+        c: "x = 5",
+        d: "int x = 5",
+        correct: "c",
+    },
+    {
+        question: "Which data type is used to store a single character in Python?",
+        a: "char",
+        b: "string",
+        c: "character",
+        d: "charstring",
+        correct: "b",
+    },
+    {
+        question: "What is the result of the following expression: 3 * 2?",
+        a: "6",
+        b: "5",
+        c: "13",
+        d: "9",
+        correct: "a",
+    },
+    {
+        question: "Which of the following is a valid Python data type?",
+        a: "integer",
+        b: "float",
+        c: "character",
+        d: "boolean",
+        correct: "b",
+    },
+    {
+        question: "What will be the value of x after the following code is executed? x = 10 + 5 * 2",
+        a: "20",
+        b: "15",
+        c: "30",
+        d: "25",
+        correct: "d",
+    },
+    {
+        question: "What is the output of the following code? \n numbers = [1, 2, 3, 4, 5] \n total = sum(numbers)\n print(total)",
+        a: "125",
+        b: "25",
+        c: "15",
+        d: "55",
+        correct: "c",
+    },
+    {
+        question: "How do you check the length of a string in Python?",
+        a: "size()",
+        b: "length()",
+        c: "count()",
+        d: "len()",
+        correct: "d",
+    },
+    {
+        question: "What does the 'elif' keyword represent in Python?",
+        a: "A loop control statement",
+        b: "An error handling statement",
+        c: "An alternative condition in an if-else statement",
+        d: "A built-in function in Python",
+        correct: "c",
+    },
+    {
+        question: "Which of the following is the correct syntax for a for loop in Python?",
+        a: "for i in range(10):",
+        b: "for i = 0; i < 10; i++:",
+        c: "for (i = 0; i < 10; i++):",
+        d: "for i < 10 in range:",
+        correct: "a",
+    },
     // {
     //     question: "Which of the following is NOT a valid Python variable name?",
     //     a: "my_variable",
@@ -227,11 +227,30 @@ submitBtn.addEventListener('click', () => {
                 timestamp: timestamp
             };
             localStorage.setItem('scoreData', JSON.stringify(scoreData));   
+            const storedScoreData = localStorage.getItem('scoreData');
+            const scoreData1 = JSON.parse(storedScoreData);
+            const latestScore = scoreData.score;
+            if (latestScore < 8 || latestScore === null || latestScore === 0){
            quiz.innerHTML = `
            <h2>You answered ${score}/${quizData.length} questions correctly</h2>
-
-           <button onclick="location.reload()">Reload</button>
+           <button onclick="clearLocalStorageAndReload()">Try Again?</button>
            `
+            }else{
+            quiz.innerHTML = `
+           <h2>You answered ${score}/${quizData.length} questions correctly</h2>
+           <button onclick="navigateToPlayground()">Go to playground</button>
+           `
+            }
+
        }
     }
 })
+
+function clearLocalStorageAndReload() {
+    localStorage.clear();
+    location.reload();
+  }
+
+  function navigateToPlayground() {
+    window.location.href = './playground.html';
+  }
