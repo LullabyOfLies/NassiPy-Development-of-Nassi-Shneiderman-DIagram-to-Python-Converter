@@ -344,10 +344,10 @@ function checkTextAreaCount() {
   var canvas = document.querySelector('#canvas');
   var textAreas = canvas.querySelectorAll('textarea:not([placeholder="True"])');
   
-  if (textAreas.length < 10) {
+  if (textAreas.length < 15) {
     processInput();
   } else {
-    alert("The converter limit is 6 diagram blocks");
+    alert("The converter limit is 14 diagram blocks");
   }
 }
 
@@ -544,7 +544,7 @@ while (currentNode) {
           }
            else {
             // console.log(elifCountArr);
-            currentNode.level = highestLevel;
+            currentNode.level = highestLevel+1;
         
           }
         }
@@ -592,20 +592,62 @@ while (currentNode) {
 
  
     
-} else if (!currentNode.value.trim().startsWith("for") && !currentNode.value.trim().startsWith("elif") && !currentNode.value.trim().startsWith("def") && !currentNode.value.trim().startsWith("if") && !currentNode.value.trim().startsWith("else") && !currentNode.value.trim().startsWith("while") && !currentNode.value.trim().startsWith("return")) {
+} else if (!currentNode.value.trim().startsWith("for") && !currentNode.value.trim().startsWith("elif") && !currentNode.value.trim().startsWith("def") && !currentNode.value.trim().startsWith("if") && !currentNode.value.trim().startsWith("else") && !currentNode.value.trim().startsWith("while") && !currentNode.value.trim().startsWith("return") && !currentNode.value.trim().startsWith("break")) {
   //this code block is to check if the currentNode is a print or any self-initialization 
     if (previousNode.value.trim().startsWith("if") || previousNode.value.trim().startsWith("else") || previousNode.value.trim().startsWith("elif") || previousNode.value.trim().startsWith("for") || previousNode.value.trim().startsWith("def") || previousNode.value.trim().startsWith("while") && currentNode.level >= 2) {
         currentNode.level = previousNode.level + 2;
-    }else if(previousNode.value.trim().startsWith("return") || previousNode.value.trim().startsWith("break") && currentNode.level >= 2){
+    }else if(previousNode.value.trim().startsWith("return") || previousNode.value.trim().startsWith("break") &&currentNode.level >= 2){
       currentNode.level = previousNode.level - 4;
+    }else if(previousNode.value.trim().startsWith("break")){
+      currentNode.level = previousNode.level-4;
     }
-     else {
+    else {
         currentNode.level = previousNode.level;
     }
-    
-}else if(previousNode && !(previousNode.value.trim().startsWith("if")) && !(previousNode.value.trim().startsWith("def")) && !(previousNode.value.trim().startsWith("for")) && !(previousNode.value.trim().startsWith("elif")) && !(previousNode.value.trim().startsWith("else")) && currentNode.value.trim().startsWith("return")){
+   
+
+}else if(previousNode && !(previousNode.value.trim().startsWith("if")) && !(previousNode.value.trim().startsWith("def")) && !(previousNode.value.trim().startsWith("for")) && !(previousNode.value.trim().startsWith("elif")) && !(previousNode.value.trim().startsWith("else")) && (previousNode.value.trim().startsWith("total"))  && currentNode.value.trim().startsWith("return")){
   //kung yung previous node ay print or iba pa pero yung currentNode ay return dapat parehas sila ng level
   currentNode.level = previousNode.level;
+  // console.log(previousNode.level);  
+  // console.log(currentNode.level);
+  // console.log(nextNode);
+}
+else if(previousNode && !(previousNode.value.trim().startsWith("if")) && !(previousNode.value.trim().startsWith("def")) && !(previousNode.value.trim().startsWith("for")) && !(previousNode.value.trim().startsWith("elif")) && !(previousNode.value.trim().startsWith("else")) && !(previousNode.value.trim().startsWith("total"))  && currentNode.value.trim().startsWith("return")){
+  //kung yung previous node ay print or iba pa pero yung currentNode ay return dapat parehas sila ng level
+  currentNode.level = previousNode.level-1;
+  // console.log(previousNode.level);  
+  // console.log(currentNode.level);
+  // console.log(nextNode);
+}
+else if(previousNode && (previousNode.value.trim().startsWith("if"))  && currentNode.value.trim().startsWith("return")){
+  //kung yung previous node ay print or iba pa pero yung currentNode ay return dapat parehas sila ng level
+  currentNode.level = previousNode.level+2;
+  // console.log(previousNode.level);  
+  // console.log(currentNode.level);
+  // console.log(nextNode);
+}
+else if(previousNode && (previousNode.value.trim().startsWith("else"))  && currentNode.value.trim().startsWith("return")){
+  //kung yung previous node ay print or iba pa pero yung currentNode ay return dapat parehas sila ng level
+  currentNode.level = previousNode.level+2;
+  // console.log(previousNode.level);  
+  // console.log(currentNode.level);
+  // console.log(nextNode);
+}else if(previousNode && (previousNode.value.trim().startsWith("if"))  && currentNode.value.trim().startsWith("break")){
+  //kung yung previous node ay print or iba pa pero yung currentNode ay return dapat parehas sila ng level
+  currentNode.level = previousNode.level+2;
+  // console.log(previousNode.level);  
+  // console.log(currentNode.level);
+  // console.log(nextNode);
+}else if(previousNode && (previousNode.value.trim().startsWith("else"))  && currentNode.value.trim().startsWith("break")){
+  //kung yung previous node ay print or iba pa pero yung currentNode ay return dapat parehas sila ng level
+  currentNode.level = previousNode.level+2;
+  // console.log(previousNode.level);  
+  // console.log(currentNode.level);
+  // console.log(nextNode);
+}else if(previousNode && (previousNode.value.trim().startsWith("elif"))  && currentNode.value.trim().startsWith("break")){
+  //kung yung previous node ay print or iba pa pero yung currentNode ay return dapat parehas sila ng level
+  currentNode.level = previousNode.level+2;
   // console.log(previousNode.level);  
   // console.log(currentNode.level);
   // console.log(nextNode);
