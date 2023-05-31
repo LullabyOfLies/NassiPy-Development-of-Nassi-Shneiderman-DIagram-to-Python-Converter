@@ -510,7 +510,7 @@ while (currentNode) {
     }  
     ifCountArr.push({ level: currentNode.level, node: currentNode });
     ifCountArr1.push({ level: currentNode.level, node: currentNode });
-    }else if (previousNode && currentNode.value.trim().startsWith("else") && nextNode.value.trim().startsWith("if")) {
+    }else if (previousNode && currentNode.value.trim().startsWith("else") && nextNode.value.trim().startsWith("if") && nextNode.value !== null) {
       let tempNode=previousNode.level;
       currentNode.level = tempNode;
       currentNode.next = nextNode.next;
@@ -552,7 +552,7 @@ while (currentNode) {
           // console.log(ifCountArr1);
           // console.log(elifCountArr);
   }  
-  else if (currentNode.value.trim().startsWith("else") && !nextNode.value.trim().startsWith("if") && !nextNode.value.trim().startsWith("elif")) {
+  else if (previousNode && !(previousNode.value.trim().startsWith("return")) && currentNode.value.trim().startsWith("else") && !nextNode.value.trim().startsWith("if") && !nextNode.value.trim().startsWith("elif")) {
     let mostRecentElseLevel = -1;
     let prevNode = previousNode;
     
@@ -592,14 +592,29 @@ while (currentNode) {
 
  
     
-} else if (!currentNode.value.trim().startsWith("for") && !currentNode.value.trim().startsWith("elif") && !currentNode.value.trim().startsWith("def") && !currentNode.value.trim().startsWith("if") && !currentNode.value.trim().startsWith("else") && !currentNode.value.trim().startsWith("while") && !currentNode.value.trim().startsWith("return") && !currentNode.value.trim().startsWith("break")) {
+}  else if (previousNode && (previousNode.value.trim().startsWith("return")) && currentNode.value.trim().startsWith("else") && !nextNode.value.trim().startsWith("if") && !nextNode.value.trim().startsWith("elif")) {
+    currentNode.level = previousNode.level - 2;
+
+}else if (!currentNode.value.trim().startsWith("for") && !currentNode.value.trim().startsWith("elif") && !currentNode.value.trim().startsWith("def") && !currentNode.value.trim().startsWith("if") && !currentNode.value.trim().startsWith("else") && !currentNode.value.trim().startsWith("while") && !currentNode.value.trim().startsWith("return") && !currentNode.value.trim().startsWith("break")) {
   //this code block is to check if the currentNode is a print or any self-initialization 
-    if (previousNode.value.trim().startsWith("if") || previousNode.value.trim().startsWith("else") || previousNode.value.trim().startsWith("elif") || previousNode.value.trim().startsWith("for") || previousNode.value.trim().startsWith("def") || previousNode.value.trim().startsWith("while") && currentNode.level >= 2) {
-        currentNode.level = previousNode.level + 2;
-    }else if(previousNode.value.trim().startsWith("return") || previousNode.value.trim().startsWith("break") &&currentNode.level >= 2){
+    if (previousNode.value.trim().startsWith("if")) {
+      currentNode.level = previousNode.level + 2;
+    }else if(previousNode.value.trim().startsWith("while")){
+      currentNode.level = previousNode.level + 2;
+    }else if(previousNode.value.trim().startsWith("def")){
+      currentNode.level = previousNode.level + 2;
+    }else if(previousNode.value.trim().startsWith("for")){
+      currentNode.level = previousNode.level + 2;
+    }else if (previousNode.value.trim().startsWith("elif")){
+      currentNode.level = previousNode.level + 2;
+    }else if (previousNode.value.trim().startsWith("else")){
+      currentNode.level = previousNode.level + 2;
+    }else if(previousNode.value.trim().startsWith("return")){
       currentNode.level = previousNode.level - 4;
     }else if(previousNode.value.trim().startsWith("break")){
       currentNode.level = previousNode.level-4;
+    }else if (previousNode.value.trim().startsWith("print") && !currentNode.value.trim().startsWith("print")){
+      currentNode.level = previousNode.level; 
     }
     else {
         currentNode.level = previousNode.level;
@@ -648,6 +663,12 @@ else if(previousNode && (previousNode.value.trim().startsWith("else"))  && curre
 }else if(previousNode && (previousNode.value.trim().startsWith("elif"))  && currentNode.value.trim().startsWith("break")){
   //kung yung previous node ay print or iba pa pero yung currentNode ay return dapat parehas sila ng level
   currentNode.level = previousNode.level+2;
+  // console.log(previousNode.level);  
+  // console.log(currentNode.level);
+  // console.log(nextNode);
+}else if(previousNode && !(previousNode.value.trim().startsWith("elif")) && !(previousNode.value.trim().startsWith("if")) && !(previousNode.value.trim().startsWith("else")) && !(previousNode.value.trim().startsWith("def")) && !(previousNode.value.trim().startsWith("return")) && !(previousNode.value.trim().startsWith("while")) && !(previousNode.value.trim().startsWith("for"))  && currentNode.value.trim().startsWith("break")){
+  //kung yung previous node ay print or iba pa pero yung currentNode ay return dapat parehas sila ng level
+  currentNode.level = previousNode.level;
   // console.log(previousNode.level);  
   // console.log(currentNode.level);
   // console.log(nextNode);
