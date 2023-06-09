@@ -599,10 +599,10 @@ while (currentNode) {
   currentNode.level = previousNode.level + 1 ;
 
 }else if (previousNode && (previousNode.value.trim().startsWith("print")) && currentNode.value.trim().startsWith("print")) {
-  currentNode.level = previousNode.level+1;
+  currentNode.level = previousNode.level;
 
 }else if (previousNode && previousNode.value.trim().startsWith("print") && !currentNode.value.trim().startsWith("print") && !currentNode.value.trim().startsWith("for") && !currentNode.value.trim().startsWith("elif") && !currentNode.value.trim().startsWith("def") && !currentNode.value.trim().startsWith("if") && !currentNode.value.trim().startsWith("else") && !currentNode.value.trim().startsWith("while") && !currentNode.value.trim().startsWith("return") && !currentNode.value.trim().startsWith("break")){
-  currentNode.level = previousNode.level-1; 
+  currentNode.level = previousNode.level; 
   console.log(previousNode)
   console.log(currentNode)
   console.log(nextNode)

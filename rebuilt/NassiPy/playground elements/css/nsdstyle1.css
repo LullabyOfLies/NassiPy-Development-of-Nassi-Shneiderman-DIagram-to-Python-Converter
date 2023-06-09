@@ -131,20 +131,22 @@
       height: 70%; 
       overflow-x: scroll;
       overflow-y: scroll;
-      background-color: black;
+      background-color:  #0070e9;
       /* Should be removed. Only for demonstration */
       /* border: 1px solid black; */
     }
     
 
     .column2 .codetbconvert{
-      background-color: black;
+      background-color: #1b1b32;
       color: white;
       font-size: 15px;
       /* height: 100%;
       width: 100%; */
       border: none;
       overflow-y: hidden;
+      border-radius: 10px ;
+      
     }
 
     .column3 {
@@ -155,12 +157,12 @@
       height: 50%; 
       overflow-x: auto;
       overflow-y: scroll;
-      background-color: white;
+      background-color: transparent;
       color: white;
     }
 
     .column2 .convertedcode{
-      background-color: black;
+      background-color: transparent;
       color: white;
       font-size: 15px;
       border: none;
@@ -218,7 +220,7 @@
        transition: all 0.3s ease 0s;
      }
      #sidebar {
-       background-color: white;
+       background-color: #009bee;
        /* margin-top: 110px; */
        /* padding-bottom: 30px; */
        /* margin-bottom: 110px; */

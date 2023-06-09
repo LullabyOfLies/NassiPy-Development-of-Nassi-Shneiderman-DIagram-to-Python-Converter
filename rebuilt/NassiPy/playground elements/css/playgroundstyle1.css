@@ -76,7 +76,7 @@ html {
 
 body{
   background-image: linear-gradient(to right top, #08bef2, #00b7f2, #00aff2, #00a7f1, #009fef, #0097ee, #008fed, #0087eb, #007cea, #0071e9, #0066e6, #1859e2);
-  height: 100%;
+  height: 100vh;
   width: auto;
   font-family: 'Lato', sans-serif;
   font-weight: 400;
