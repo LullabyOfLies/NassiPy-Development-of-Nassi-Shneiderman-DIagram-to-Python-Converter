@@ -482,7 +482,7 @@ for (const textarea of textareas) {
 
 
 // initialize indention and current node variables
-let indention = " ";
+// let indention = " ";
 let previousNode = null;
 let currentNode = linkedList;
 let nextNode = currentNode.next;
@@ -583,7 +583,7 @@ while (currentNode) {
       }
      console.log(currentNode);
      console.log(ifCountArr);
-      currentNode.level = highestLevel;
+      currentNode.level = highestLevel+1;
       // remove the highest level node from ifCountArr
       ifCountArr.splice(ifCountArr.indexOf(highestNode), 1);
   
@@ -592,29 +592,38 @@ while (currentNode) {
 
  
     
-}  else if (previousNode && (previousNode.value.trim().startsWith("return")) && currentNode.value.trim().startsWith("else") && !nextNode.value.trim().startsWith("if") && !nextNode.value.trim().startsWith("elif")) {
+}else if (previousNode && (previousNode.value.trim().startsWith("return")) && currentNode.value.trim().startsWith("else") && !nextNode.value.trim().startsWith("if") && !nextNode.value.trim().startsWith("elif")) {
     currentNode.level = previousNode.level - 2;
 
+}else if (previousNode && (previousNode.value.trim().startsWith("else")) && currentNode.value.trim().startsWith("print")) {
+  currentNode.level = previousNode.level + 1 ;
+
+}else if (previousNode && (previousNode.value.trim().startsWith("print")) && currentNode.value.trim().startsWith("print")) {
+  currentNode.level = previousNode.level+1;
+
+}else if (previousNode && previousNode.value.trim().startsWith("print") && !currentNode.value.trim().startsWith("print") && !currentNode.value.trim().startsWith("for") && !currentNode.value.trim().startsWith("elif") && !currentNode.value.trim().startsWith("def") && !currentNode.value.trim().startsWith("if") && !currentNode.value.trim().startsWith("else") && !currentNode.value.trim().startsWith("while") && !currentNode.value.trim().startsWith("return") && !currentNode.value.trim().startsWith("break")){
+  currentNode.level = previousNode.level-1; 
+  console.log(previousNode)
+  console.log(currentNode)
+  console.log(nextNode)
 }else if (!currentNode.value.trim().startsWith("for") && !currentNode.value.trim().startsWith("elif") && !currentNode.value.trim().startsWith("def") && !currentNode.value.trim().startsWith("if") && !currentNode.value.trim().startsWith("else") && !currentNode.value.trim().startsWith("while") && !currentNode.value.trim().startsWith("return") && !currentNode.value.trim().startsWith("break")) {
   //this code block is to check if the currentNode is a print or any self-initialization 
-    if (previousNode.value.trim().startsWith("if")) {
+    if (previousNode && previousNode.value.trim().startsWith("if")) {
+      currentNode.level = previousNode.level + 3;
+    }else if(previousNode && previousNode.value.trim().startsWith("while")){
       currentNode.level = previousNode.level + 2;
-    }else if(previousNode.value.trim().startsWith("while")){
+    }else if(previousNode && previousNode.value.trim().startsWith("def")){
       currentNode.level = previousNode.level + 2;
-    }else if(previousNode.value.trim().startsWith("def")){
+    }else if(previousNode && previousNode.value.trim().startsWith("for")){
       currentNode.level = previousNode.level + 2;
-    }else if(previousNode.value.trim().startsWith("for")){
+    }else if (previousNode && previousNode.value.trim().startsWith("elif")){
       currentNode.level = previousNode.level + 2;
-    }else if (previousNode.value.trim().startsWith("elif")){
+    }else if (previousNode && previousNode.value.trim().startsWith("else:")){
       currentNode.level = previousNode.level + 2;
-    }else if (previousNode.value.trim().startsWith("else")){
-      currentNode.level = previousNode.level + 2;
-    }else if(previousNode.value.trim().startsWith("return")){
+    }else if(previousNode && previousNode.value.trim().startsWith("return")){
       currentNode.level = previousNode.level - 4;
-    }else if(previousNode.value.trim().startsWith("break")){
-      currentNode.level = previousNode.level-4;
-    }else if (previousNode.value.trim().startsWith("print") && !currentNode.value.trim().startsWith("print")){
-      currentNode.level = previousNode.level; 
+    }else if(previousNode && previousNode.value.trim().startsWith("break")){
+      currentNode.level = previousNode.level - 4;
     }
     else {
         currentNode.level = previousNode.level;
@@ -730,13 +739,22 @@ else if(previousNode && !(previousNode.value.trim().startsWith("if")) && !(previ
   // const indentedValue = `${indention.repeat(count)}${currentNode.value}`.replace(/ /g, '&nbsp;');
   // codetbconvert.innerHTML += `${indentedValue}<br>`;
   
-  //output node with level but in textarea
-  const count = Math.max(0, currentNode.level);
-  console.log(`${indention.repeat(count)}${currentNode.value}`);
-  const codetbconvert = document.querySelector('textarea.codetbconvert');
-  const indentedValue = `${indention.repeat(count)}${currentNode.value}`;
-  codetbconvert.value += `${indentedValue}\n`;
+  //output node with level but in textarea ORIGINAL
+  // const count = Math.max(0, currentNode.level);
+  // console.log(`${indention.repeat(count)}${currentNode.value}`);
+  // const codetbconvert = document.querySelector('textarea.codetbconvert');
+  // const indentedValue = `${indention.repeat(count)}${currentNode.value}`;
+  // codetbconvert.value += `${indentedValue}\n`;
  
+  //try revised
+  const indent = ' '; // Set the desired indentation string
+const count = Math.max(0, currentNode.level);
+const indentedValue = indent.repeat(count) + currentNode.value;
+console.log(indentedValue);
+
+const codetbconvert = document.querySelector('textarea.codetbconvert');
+codetbconvert.value += indentedValue + '\n';
+
   
   // const textarea = document.querySelector('textarea.codetbconvert');
   // const copiedText = textarea.value;
