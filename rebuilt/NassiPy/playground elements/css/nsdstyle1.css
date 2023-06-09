@@ -113,7 +113,7 @@
        padding: 10px;
        height: 70%; 
        overflow-x: scroll;
-       overflow-y: scroll;
+       overflow-y: auto;
        /* Should be removed. Only for demonstration */
        /* border: 1px solid black; */
      } 
@@ -150,15 +150,15 @@
     }
 
     .column3 {
-      float:none;
-      position: relative;
-      width: 100%;
+      /* float:none; */
+      /* position: relative; */
+      width: 100vw;
       padding: 10px;
-      height: 50%; 
-      overflow-x: auto;
-      overflow-y: scroll;
-      background-color: transparent;
+      height: 40%; 
+      background-color: #0095ee;
       color: white;
+      margin: 0;
+      padding: 0;
     }
 
     .column2 .convertedcode{
