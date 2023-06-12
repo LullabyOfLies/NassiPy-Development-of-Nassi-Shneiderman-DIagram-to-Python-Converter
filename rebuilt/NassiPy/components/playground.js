@@ -8,15 +8,14 @@ class Playground extends HTMLElement{
                         <div class="container">
                             <div class="row">
                                 <div class="menu">
-                                    <button type="button" class="btn btn-primary m-1" onclick="upload();">Open</button>
-                                    <button type="button" class="btn btn-primary m-1" onclick="save();">Save</button>
-                                    <button type="button" class="btn btn-primary m-1" onclick="printContent();">Print</b></button>
-                                    <button type="button" class="btn btn-primary m-1" onclick="removeElement();">Delete</button>
-                                    <button type="button" class="btn btn-primary m-1" onclick="undo();">Undo</button>
-                                    <button type="button" class="btn btn-primary m-1" onclick="redo();">Redo</button>
-                                    <button type="button" class="btn btn-primary m-1" id="png" onclick="getImage();">Export PNG</button>
-                                    <button type="button" class="btn btn-primary m-1" onclick="clearCanvas();">Clear</button>
-                                    <button type="button" class="btn btn-primary m-1" onclick="processInput()">Convert</button>
+                                <button onclick="upload();">Open</button>
+                                <button onclick="save();">Save</button>          
+                                <button onclick="removeElement();">Delete</button>
+                                <button onclick="undo();">Undo</button>
+                                <button onclick="redo();">Redo</button>
+                                <button id="png" onclick="getImage();">Export PNG</button>
+                                <button onclick="clearCanvas();">Clear all</button>
+                                <button onclick="checkTextAreaCount();">Convert</button>
                                 </div>
                             </div>
                         </div>

@@ -351,6 +351,8 @@ function checkTextAreaCount() {
   }
 }
 
+
+
 //initial parser
 function processInput() {
 
@@ -505,12 +507,15 @@ while (currentNode) {
   if (currentNode.value.trim().startsWith("if")) {
     if (previousNode && (previousNode.value.trim().startsWith("if") || previousNode.value.trim().startsWith("def")) || previousNode.value.trim().startsWith("for") ) {
       currentNode.level = previousNode.level + 2;
-    } else {
+    } else if(previousNode && !(previousNode.value.trim().startsWith("elif")) && !(previousNode.value.trim().startsWith("if")) && !(previousNode.value.trim().startsWith("else")) && !(previousNode.value.trim().startsWith("def")) && !(previousNode.value.trim().startsWith("return")) && !(previousNode.value.trim().startsWith("while")) && !(previousNode.value.trim().startsWith("for"))){
+      currentNode.level = previousNode.level;
+    }
+    else {
       currentNode.level = previousNode.level;
     }  
     ifCountArr.push({ level: currentNode.level, node: currentNode });
     ifCountArr1.push({ level: currentNode.level, node: currentNode });
-    }else if (previousNode && currentNode.value.trim().startsWith("else") && nextNode.value.trim().startsWith("if") && nextNode.value !== null) {
+  }else if (previousNode && currentNode.value.trim().startsWith("else") && nextNode.value.trim().startsWith("if") && nextNode.value !== null) {
       let tempNode=previousNode.level;
       currentNode.level = tempNode;
       currentNode.next = nextNode.next;
@@ -544,7 +549,7 @@ while (currentNode) {
           }
            else {
             // console.log(elifCountArr);
-            currentNode.level = highestLevel+1;
+            currentNode.level = highestLevel;
         
           }
         }
@@ -583,7 +588,7 @@ while (currentNode) {
       }
      console.log(currentNode);
      console.log(ifCountArr);
-      currentNode.level = highestLevel+1;
+      currentNode.level = highestLevel;
       // remove the highest level node from ifCountArr
       ifCountArr.splice(ifCountArr.indexOf(highestNode), 1);
   
