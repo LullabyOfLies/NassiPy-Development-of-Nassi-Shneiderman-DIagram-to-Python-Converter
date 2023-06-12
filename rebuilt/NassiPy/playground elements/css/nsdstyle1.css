@@ -48,11 +48,6 @@
        font-size: clamp(0.3125rem, -0.8594rem + 3.75vw, 1.25rem);
      }
      
-/*      
-     body {
-      background-color: #1b1b32;
-     } */
-     
      .menu {
       /* width: 80vw; */
        display: block;
@@ -220,7 +215,7 @@
        transition: all 0.3s ease 0s;
      }
      #sidebar {
-       background-color: #009bee;
+       background-color: transparent;
        /* margin-top: 110px; */
        /* padding-bottom: 30px; */
        /* margin-bottom: 110px; */
