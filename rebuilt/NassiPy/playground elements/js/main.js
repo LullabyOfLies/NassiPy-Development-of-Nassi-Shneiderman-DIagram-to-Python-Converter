@@ -729,28 +729,6 @@ else if(previousNode && !(previousNode.value.trim().startsWith("if")) && !(previ
   // console.log(currentNode.level);
   // console.log(nextNode);
 }
-// else if (!currentNode.value.trim().startsWith("for") && !currentNode.value.trim().startsWith("elif") && !currentNode.value.trim().startsWith("def") && !currentNode.value.trim().startsWith("if") && !currentNode.value.trim().startsWith("else") && !currentNode.value.trim().startsWith("while") && currentNode.level >= 2){
-//   if (previousNode.value.trim().startsWith("return") || previousNode.value.trim().startsWith("break")) {
-//     currentNode.level = previousNode.level - 4;
-// } else {
-//     currentNode.level = previousNode.level;
-// }
-// }
-
-  // output node with level
-  // const count = Math.max(0, currentNode.level);
- 
-  // const codetbconvert = document.querySelector('p.codetbconvert');
-  // const indentedValue = `${indention.repeat(count)}${currentNode.value}`.replace(/ /g, '&nbsp;');
-  // codetbconvert.innerHTML += `${indentedValue}<br>`;
-  
-  //output node with level but in textarea ORIGINAL
-  // const count = Math.max(0, currentNode.level);
-  // console.log(`${indention.repeat(count)}${currentNode.value}`);
-  // const codetbconvert = document.querySelector('textarea.codetbconvert');
-  // const indentedValue = `${indention.repeat(count)}${currentNode.value}`;
-  // codetbconvert.value += `${indentedValue}\n`;
- 
   //try revised
   const indent = ' '; // Set the desired indentation string
 const count = Math.max(0, currentNode.level);
@@ -760,38 +738,6 @@ console.log(indentedValue);
 const codetbconvert = document.querySelector('textarea.codetbconvert');
 codetbconvert.value += indentedValue + '\n';
 
-  
-  // const textarea = document.querySelector('textarea.codetbconvert');
-  // const copiedText = textarea.value;
-  // console.log(copiedText);
-  
-
-
-  //this code below is for the textarea
-  // const textarea = document.querySelector('textarea.callIt');
-  // textarea.value = callFunct + '\n';
-  
-
-
-  
-  //this code is for the output but added the callfunction of the `def`
-  // const count = Math.max(0, currentNode.level);
-  // const codetbconvert = document.querySelector('p.codetbconvert');
-  // const indentedValue = `${indention.repeat(count)}${currentNode.value}`.replace(/ /g, '&nbsp;');
-  
-  // let output = indentedValue;
-  
-  // // Check if it is the last node
-  // if (currentNode.next === null) {
-  //   output += `<br>${callFunct}`;
-  // }
-  
-  // output += '<br>';
-  // codetbconvert.innerHTML += output;
-
-
-
-  
   // update variables for next iteration
   previousNode = currentNode;
   currentNode = nextNode;
@@ -800,8 +746,6 @@ codetbconvert.value += indentedValue + '\n';
   }
 }
 }
-
-
 // main function ends here
  
 
@@ -821,7 +765,6 @@ function dragLeave(ev) {
   } else {
     setDropBeforeEndTransparent(ev.target);
   }*/
-
 }
 
 function allowDrop(ev) {
@@ -833,22 +776,31 @@ function allowDrop(ev) {
   ev.preventDefault();
 }
 
+
+
 function drag(ev) {
   // ev.target.style.backgroundColor = "white";
   ev.dataTransfer.setData("text", ev.target.outerHTML);
 }
 
+//Limit canvas #1
+let counter = 0; // Counter variable to keep track of the number of drops
+
 function drop(ev) {
+  if (counter >= 13) {
+    alert("I'm sorry, you have reach the limit of 14 diagram blocks.");
+    return; // If the counter is 14 or greater, do not allow further drops
+  }
+
   if (!isElementInRblock(ev.target)) {
     return;
   }
 
-  d = Date.now()
+  d = Date.now();
   if (d - lastDrop < 1000) {
     return;
   }
   lastDrop = d;
-
 
   target = ev.target;
 
@@ -870,10 +822,10 @@ function drop(ev) {
     let newNode = null;
 
     if (target.classList.contains("drop-before-begin")) {
-      target.parentElement.insertAdjacentHTML('beforebegin', data);
+      target.parentElement.insertAdjacentHTML("beforebegin", data);
       newNode = target.parentElement.previousSibling;
     } else {
-      target.insertAdjacentHTML('beforeend', data);
+      target.insertAdjacentHTML("beforeend", data);
       newNode = target.lastChild;
     }
 
@@ -897,17 +849,91 @@ function drop(ev) {
       }
     }
 
-
     unselectAllElementsFromDroparea(target);
 
+    counter++; // Increment the counter after a successful drop
 
-
+    if (counter >= 14) {
+      // Disable ondrop and the drop function when the counter reaches 14
+      ev.target.ondrop = null;
+      ev.target.drop = null;
+    }
   }
-
 
   unsetDBE(dbe);
   setAllTriangles();
 }
+
+// function drop(ev) {
+//   if (!isElementInRblock(ev.target)) {
+//     return;
+//   }
+
+//   d = Date.now()
+//   if (d - lastDrop < 1000) {
+//     return;
+//   }
+//   lastDrop = d;
+
+
+//   target = ev.target;
+
+//   let dbe = getDropBeforeEnd(ev.target);
+//   if (dbe != null) {
+//     target = dbe;
+//   }
+
+//   if (target.classList.contains("droparea") && target.tagName != "input") {
+//     setDropareaDefaultColor(target);
+//     target.style.borderColor = "transparent";
+
+//     redoList = [];
+//     pushToUndo();
+
+//     ev.preventDefault();
+//     var data = ev.dataTransfer.getData("text");
+
+//     let newNode = null;
+
+//     if (target.classList.contains("drop-before-begin")) {
+//       target.parentElement.insertAdjacentHTML('beforebegin', data);
+//       newNode = target.parentElement.previousSibling;
+//     } else {
+//       target.insertAdjacentHTML('beforeend', data);
+//       newNode = target.lastChild;
+//     }
+
+//     if (newNode.nodeName == "#text") {
+//       setDropareaDefaultColor(newNode.parentElement);
+//       setFromUndo();
+//       newNode.remove();
+//     } else {
+//       if (newNode.classList.contains("decision-item")) {
+//         setFromUndo();
+//         newNode.remove();
+//       }
+
+//       if (newNode.classList.contains("parallel-item")) {
+//         setFromUndo();
+//         newNode.remove();
+//       }
+
+//       if (target.classList.contains("decision")) {
+//         setDecisionTriangle(target);
+//       }
+//     }
+
+
+//     unselectAllElementsFromDroparea(target);
+
+
+//     console.log("hey");
+//   }
+
+
+//   unsetDBE(dbe);
+//   setAllTriangles();
+// }
 
 function decisionDrop(ev) {
   if (!isElementInRblock(ev.target)) {
